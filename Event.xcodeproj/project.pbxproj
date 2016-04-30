@@ -11,6 +11,7 @@
 		65CBF4961CCA1B40004C27B4 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4951CCA1B40004C27B4 /* EventTests.swift */; };
 		65CBF4A11CCA2D11004C27B4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
 		65CBF4A31CCA2D62004C27B4 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */; };
+		65FD8EBE1CD531160046D5D6 /* EventConveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* EventConveyor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		65CBF4971CCA1B40004C27B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65CBF4A01CCA2D11004C27B4 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
+		65FD8EBD1CD531160046D5D6 /* EventConveyor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventConveyor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				65CBF48B1CCA1B40004C27B4 /* Info.plist */,
 				65CBF4A01CCA2D11004C27B4 /* Event.swift */,
 				65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */,
+				65FD8EBD1CD531160046D5D6 /* EventConveyor.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CBF4A11CCA2D11004C27B4 /* Event.swift in Sources */,
+				65FD8EBE1CD531160046D5D6 /* EventConveyor.swift in Sources */,
 				65CBF4A31CCA2D62004C27B4 /* EventEmitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +392,7 @@
 				65CBF49C1CCA1B40004C27B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65CBF49D1CCA1B40004C27B4 /* Build configuration list for PBXNativeTarget "EventTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +401,7 @@
 				65CBF49F1CCA1B40004C27B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

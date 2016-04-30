@@ -51,6 +51,10 @@ class EventEmitterTest : EventEmitterProtocol {
         return self.on(groupedEvent.event, handler: handler)
     }
     
+    func on<E : EventProtocol>(groupedEvent: TestEventGroup<E>) -> EventConveyor<E.Payload> {
+        return self.on(groupedEvent.event)
+    }
+    
     func emit<E : EventProtocol>(groupedEvent: TestEventGroup<E>, payload:E.Payload) {
         dispatcher.dispatch(groupedEvent.event, payload: payload)
     }
@@ -83,7 +87,18 @@ class EventTests: XCTestCase {
             print("complex: string:", s, "int:", i)
         }
         
+        let semitter = eventEmitter.on(.complex).filter { (s, i) in
+            i % 2 == 0
+        }.map { (s, i) in
+            s + String(i*100)
+        }
+        
+        semitter.on { string in
+            print(string)
+        }
+        
         eventEmitter.emit(.complex, payload: ("whoo hoo", 7))
+        eventEmitter.emit(.complex, payload: ("hey", 8))
         
         eventEmitter.emit(.error, payload: NSError(domain: "", code: 1, userInfo: nil))
         
