@@ -16,6 +16,8 @@
 
 import Foundation
 
+import ExecutionContext
+
 internal struct UniqueContainer<T> {
     private let _id:NSUUID
     
@@ -39,25 +41,37 @@ internal func ==<T>(lhs:UniqueContainer<T>, rhs:UniqueContainer<T>) -> Bool {
     return lhs._id == rhs._id
 }
 
-public class EventConveyor<T> {
+public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
     public typealias Payload = T
     public typealias Handler = Payload->Void
+    public typealias SettledTenant = EventConveyor<T>
+    
+    public let context: ExecutionContextType
+    
+    public func settleIn(context: ExecutionContextType) -> EventConveyor<T> {
+        return EventConveyor<Payload>(context: context) { fun in
+            self.react { payload in
+                fun(payload)
+            }
+        }
+    }
     
     private let _recycle:Off
     private var _handlers:Set<UniqueContainer<(Handler, EventConveyor)>>
     
-    private init(recycle:Off = {}) {
+    private init(context:ExecutionContextType, recycle:Off = {}) {
         self._recycle = recycle
         self._handlers = []
+        self.context = context
     }
     
-    private convenience init(advise:(Payload->Void)->Off) {
+    private convenience init(context:ExecutionContextType, advise:(Payload->Void)->Off) {
         var emit:(Payload)->Void = {_ in}
         
         let off = advise { payload in
             emit(payload)
         }
-        self.init(recycle:off)
+        self.init(context:context, recycle:off)
         
         emit = { [unowned self](payload) in
             self.emit(payload)
@@ -69,25 +83,29 @@ public class EventConveyor<T> {
     }
     
     private func emit(payload:Payload) {
-        for handler in _handlers {
-            handler.content.0(payload)
+        context.immediateIfCurrent {
+            for handler in self._handlers {
+                handler.content.0(payload)
+            }
         }
     }
     
     public func react(f:Handler) -> Off {
-        let container = UniqueContainer(content: (f, self))
-        
-        _handlers.insert(container)
-        
-        return {
-            self._handlers.remove(container)
+        return context.sync {
+            let container = UniqueContainer(content: (f, self))
+            
+            self._handlers.insert(container)
+            
+            return {
+                self._handlers.remove(container)
+            }
         }
     }
 }
 
 public extension EventConveyor {
     public func map<A>(f:Payload->A) -> EventConveyor<A> {
-        return EventConveyor<A> { fun in
+        return EventConveyor<A>(context: self.context) { fun in
             self.react { payload in
                 fun(f(payload))
             }
@@ -95,7 +113,7 @@ public extension EventConveyor {
     }
     
     public func filter(f:Payload->Bool) -> EventConveyor<Payload> {
-        return EventConveyor<Payload> { fun in
+        return EventConveyor<Payload>(context: self.context) { fun in
             self.react { payload in
                 if f(payload) {
                     fun(payload)
@@ -107,7 +125,7 @@ public extension EventConveyor {
 
 public extension EventEmitterProtocol {
     public func on<E : EventProtocol>(event: E) -> EventConveyor<E.Payload> {
-        return EventConveyor<E.Payload> { fun in
+        return EventConveyor<E.Payload>(context: self.context) { fun in
             self.on(event, handler: fun)
         }
     }

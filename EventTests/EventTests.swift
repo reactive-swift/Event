@@ -9,6 +9,8 @@
 import XCTest
 @testable import Event
 
+import ExecutionContext
+
 enum TestEventString : EventProtocol {
     typealias Payload = String
     case event
@@ -46,17 +48,14 @@ struct TestEventGroup<E : EventProtocol> {
 
 class EventEmitterTest : EventEmitterProtocol {
     let dispatcher:EventDispatcher = EventDispatcher()
-    
-    func on<E : EventProtocol>(groupedEvent: TestEventGroup<E>, handler:E.Payload->Void) -> Off {
-        return self.on(groupedEvent.event, handler: handler)
-    }
+    let context: ExecutionContextType = ExecutionContext.current
     
     func on<E : EventProtocol>(groupedEvent: TestEventGroup<E>) -> EventConveyor<E.Payload> {
         return self.on(groupedEvent.event)
     }
     
     func emit<E : EventProtocol>(groupedEvent: TestEventGroup<E>, payload:E.Payload) {
-        dispatcher.dispatch(groupedEvent.event, payload: payload)
+        self.emit(groupedEvent.event, payload: payload)
     }
 }
 
@@ -73,17 +72,19 @@ class EventTests: XCTestCase {
     }
     
     func testExample() {
+        let ec = ExecutionContext(kind: .Parallel)
+        
         let eventEmitter = EventEmitterTest()
         
-        let _ = eventEmitter.on(.string) { s in
+        let _ = eventEmitter.on(.string).settleIn(ec).react { s in
             print("string:", s)
         }
         
-        let _ = eventEmitter.on(.int) { i in
+        let _ = eventEmitter.on(.int).settleIn(global).react { i in
             print("int:", i)
         }
         
-        let _ = eventEmitter.on(.complex) { (s, i) in
+        let _ = eventEmitter.on(.complex).settleIn(immediate).react { (s, i) in
             print("complex: string:", s, "int:", i)
         }
         
@@ -103,6 +104,8 @@ class EventTests: XCTestCase {
             print(string)
         }
         
+        eventEmitter.emit(.int, payload: 7)
+        eventEmitter.emit(.string, payload: "something here")
         eventEmitter.emit(.complex, payload: ("whoo hoo", 7))
         eventEmitter.emit(.complex, payload: ("hey", 8))
         

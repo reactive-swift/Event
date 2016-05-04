@@ -15,6 +15,7 @@
 //===----------------------------------------------------------------------===//
 
 import Foundation
+import ExecutionContext
 
 internal struct Listener {
     private let _id:NSUUID
@@ -46,7 +47,7 @@ internal func ==(lhs:Listener, rhs:Listener) -> Bool {
     return lhs._id == rhs._id
 }
 
-public protocol EventEmitterProtocol : AnyObject {
+public protocol EventEmitterProtocol : AnyObject, ExecutionContextTenantProtocol {
     var dispatcher:EventDispatcher {get}
 }
 
@@ -54,18 +55,18 @@ public typealias Off = ()->Void
 
 public extension EventEmitterProtocol {
     internal func on<E : EventProtocol>(event: E, handler:E.Payload->Void) -> Off {
-        let listener = dispatcher.addListener(event, handler: handler)
+        let listener = dispatcher.addListener(event, context: context, handler: handler)
         return { [weak self]()->Void in
-            self?.dispatcher.removeListener(listener)
+            self?.dispatcher.removeListener(listener, context: self!.context)
         }
     }
     
     public func emit<E : EventProtocol>(event: E, payload:E.Payload) {
-        dispatcher.dispatch(event, payload: payload)
+        dispatcher.dispatch(event, context: context, payload: payload)
     }
     
     public func emit<E : EventProtocol>(groupedEvent: CommonEventGroup<E>, payload:E.Payload) {
-        dispatcher.dispatch(groupedEvent.event, payload: payload)
+        dispatcher.dispatch(groupedEvent.event, context: context, payload: payload)
     }
 }
 
@@ -99,29 +100,35 @@ public func ==(lhs:HashableContainer, rhs:HashableContainer) -> Bool {
 public class EventDispatcher {
     private var registry:Dictionary<HashableContainer,Set<Listener>> = [:]
     
-    internal func addListener<E : EventProtocol>(event: E, handler:E.Payload->Void) -> Listener {
-        let container = HashableContainer(hashable: event)
-        let listener = Listener(event: container, listener: handler)
-        
-        if registry[container] == nil {
-           registry[container] = Set()
+    internal func addListener<E : EventProtocol>(event: E, context:ExecutionContextType, handler:E.Payload->Void) -> Listener {
+        return context.sync {
+            let container = HashableContainer(hashable: event)
+            let listener = Listener(event: container, listener: handler)
+            
+            if self.registry[container] == nil {
+                self.registry[container] = Set()
+            }
+            
+            self.registry[container]?.insert(listener)
+            
+            return listener
         }
-        
-        registry[container]?.insert(listener)
-        
-        return listener
     }
     
-    internal func removeListener(listener:Listener) {
-        registry[listener.event]?.remove(listener)
+    internal func removeListener(listener:Listener, context:ExecutionContextType) {
+        context.immediateIfCurrent {
+            self.registry[listener.event]?.remove(listener)
+        }
     }
     
-    internal func dispatch<E : EventProtocol>(event:E, payload:E.Payload) {
-        let container = HashableContainer(hashable: event)
-        
-        if let listeners = registry[container] {
-            for listener in listeners {
-                listener.listener(payload)
+    internal func dispatch<E : EventProtocol>(event:E, context:ExecutionContextType, payload:E.Payload) {
+        context.immediateIfCurrent {
+            let container = HashableContainer(hashable: event)
+            
+            if let listeners = self.registry[container] {
+                for listener in listeners {
+                    listener.listener(payload)
+                }
             }
         }
     }
