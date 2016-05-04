@@ -93,7 +93,7 @@ class EventTests: XCTestCase {
             s + String(i*100)
         }
         
-        semitter.on { string in
+        semitter.react { string in
             print(string)
         }
         

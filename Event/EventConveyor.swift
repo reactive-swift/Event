@@ -39,7 +39,7 @@ public class EventConveyor<T> {
         }
     }
     
-    public func on(f:Handler) -> EventConveyor<T> {
+    public func react(f:Handler) -> EventConveyor<T> {
         _handlers.append(f)
         return self
     }
@@ -49,7 +49,7 @@ public extension EventConveyor {
     public func map<A>(f:Payload->A) -> EventConveyor<A> {
         let conveyor = EventConveyor<A>()
         
-        self.on { payload in
+        self.react { payload in
             conveyor.emit(f(payload))
         }
         
@@ -59,7 +59,7 @@ public extension EventConveyor {
     public func filter(f:Payload->Bool) -> EventConveyor<Payload> {
         let conveyor = EventConveyor<Payload>()
         
-        self.on { payload in
+        self.react { payload in
             if f(payload) {
                 conveyor.emit(payload)
             }
@@ -76,7 +76,7 @@ public extension EventEmitterProtocol {
             conveyor?.emit(payload)
         }
         conveyor = EventConveyor<E.Payload>() {
-            self.off(event, listener: listener)
+            self.off(listener)
         }
         return conveyor!
     }

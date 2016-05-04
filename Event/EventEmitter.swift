@@ -59,8 +59,8 @@ public extension EventEmitterProtocol {
         return self.on(groupedEvent.event, handler: handler)
     }
     
-    public func off<E : EventProtocol>(event: E, listener:Listener) {
-        
+    public func off(listener:Listener) {
+        dispatcher.removeListener(listener)
     }
     
     public func emit<E : EventProtocol>(event: E, payload:E.Payload) {
