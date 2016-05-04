@@ -12,6 +12,24 @@
 		65CBF4A11CCA2D11004C27B4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
 		65CBF4A31CCA2D62004C27B4 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */; };
 		65FD8EBE1CD531160046D5D6 /* EventConveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* EventConveyor.swift */; };
+		65FD8F451CDA2B380046D5D6 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDB1CDA2B080046D5D6 /* Boilerplate.framework */; };
+		65FD8F461CDA2B380046D5D6 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDD1CDA2B080046D5D6 /* ExecutionContext.framework */; };
+		65FD8F471CDA2B380046D5D6 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDF1CDA2B080046D5D6 /* Foundation3.framework */; };
+		65FD8F481CDA2B380046D5D6 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE11CDA2B080046D5D6 /* Result.framework */; };
+		65FD8F491CDA2B380046D5D6 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE31CDA2B080046D5D6 /* RunLoop.framework */; };
+		65FD8F4A1CDA2B380046D5D6 /* UV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE51CDA2B080046D5D6 /* UV.framework */; };
+		65FD8F4B1CDA2B510046D5D6 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDB1CDA2B080046D5D6 /* Boilerplate.framework */; };
+		65FD8F4C1CDA2B510046D5D6 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDD1CDA2B080046D5D6 /* ExecutionContext.framework */; };
+		65FD8F4D1CDA2B510046D5D6 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDF1CDA2B080046D5D6 /* Foundation3.framework */; };
+		65FD8F4E1CDA2B510046D5D6 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE11CDA2B080046D5D6 /* Result.framework */; };
+		65FD8F4F1CDA2B510046D5D6 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE31CDA2B080046D5D6 /* RunLoop.framework */; };
+		65FD8F501CDA2B510046D5D6 /* UV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE51CDA2B080046D5D6 /* UV.framework */; };
+		65FD8F521CDA2B630046D5D6 /* Boilerplate.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDB1CDA2B080046D5D6 /* Boilerplate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		65FD8F531CDA2B630046D5D6 /* ExecutionContext.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDD1CDA2B080046D5D6 /* ExecutionContext.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		65FD8F541CDA2B630046D5D6 /* Foundation3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDF1CDA2B080046D5D6 /* Foundation3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		65FD8F551CDA2B630046D5D6 /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE11CDA2B080046D5D6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		65FD8F561CDA2B630046D5D6 /* RunLoop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE31CDA2B080046D5D6 /* RunLoop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		65FD8F571CDA2B630046D5D6 /* UV.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE51CDA2B080046D5D6 /* UV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +42,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		65FD8F511CDA2B570046D5D6 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				65FD8F521CDA2B630046D5D6 /* Boilerplate.framework in Copy Frameworks */,
+				65FD8F531CDA2B630046D5D6 /* ExecutionContext.framework in Copy Frameworks */,
+				65FD8F541CDA2B630046D5D6 /* Foundation3.framework in Copy Frameworks */,
+				65FD8F551CDA2B630046D5D6 /* Result.framework in Copy Frameworks */,
+				65FD8F561CDA2B630046D5D6 /* RunLoop.framework in Copy Frameworks */,
+				65FD8F571CDA2B630046D5D6 /* UV.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		65CBF4861CCA1B40004C27B4 /* Event.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Event.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CBF48B1CCA1B40004C27B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +70,27 @@
 		65CBF4A01CCA2D11004C27B4 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
 		65FD8EBD1CD531160046D5D6 /* EventConveyor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventConveyor.swift; sourceTree = "<group>"; };
+		65FD8ECD1CDA2B080046D5D6 /* Boilerplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Boilerplate.framework; sourceTree = "<group>"; };
+		65FD8ED11CDA2B080046D5D6 /* ExecutionContext.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ExecutionContext.framework; sourceTree = "<group>"; };
+		65FD8ED41CDA2B080046D5D6 /* Foundation3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Foundation3.framework; sourceTree = "<group>"; };
+		65FD8ED61CDA2B080046D5D6 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = "<group>"; };
+		65FD8ED81CDA2B080046D5D6 /* RunLoop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RunLoop.framework; sourceTree = "<group>"; };
+		65FD8EDB1CDA2B080046D5D6 /* Boilerplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Boilerplate.framework; sourceTree = "<group>"; };
+		65FD8EDD1CDA2B080046D5D6 /* ExecutionContext.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ExecutionContext.framework; sourceTree = "<group>"; };
+		65FD8EDF1CDA2B080046D5D6 /* Foundation3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Foundation3.framework; sourceTree = "<group>"; };
+		65FD8EE11CDA2B080046D5D6 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = "<group>"; };
+		65FD8EE31CDA2B080046D5D6 /* RunLoop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RunLoop.framework; sourceTree = "<group>"; };
+		65FD8EE51CDA2B080046D5D6 /* UV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UV.framework; sourceTree = "<group>"; };
+		65FD8EEB1CDA2B080046D5D6 /* Boilerplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Boilerplate.framework; sourceTree = "<group>"; };
+		65FD8EEF1CDA2B080046D5D6 /* ExecutionContext.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ExecutionContext.framework; sourceTree = "<group>"; };
+		65FD8EF11CDA2B080046D5D6 /* Foundation3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Foundation3.framework; sourceTree = "<group>"; };
+		65FD8EF31CDA2B080046D5D6 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = "<group>"; };
+		65FD8EF51CDA2B080046D5D6 /* RunLoop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RunLoop.framework; sourceTree = "<group>"; };
+		65FD8EFB1CDA2B080046D5D6 /* Boilerplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Boilerplate.framework; sourceTree = "<group>"; };
+		65FD8EFD1CDA2B080046D5D6 /* ExecutionContext.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ExecutionContext.framework; sourceTree = "<group>"; };
+		65FD8F011CDA2B080046D5D6 /* Foundation3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Foundation3.framework; sourceTree = "<group>"; };
+		65FD8F031CDA2B080046D5D6 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = "<group>"; };
+		65FD8F051CDA2B080046D5D6 /* RunLoop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RunLoop.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +98,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FD8F451CDA2B380046D5D6 /* Boilerplate.framework in Frameworks */,
+				65FD8F461CDA2B380046D5D6 /* ExecutionContext.framework in Frameworks */,
+				65FD8F471CDA2B380046D5D6 /* Foundation3.framework in Frameworks */,
+				65FD8F481CDA2B380046D5D6 /* Result.framework in Frameworks */,
+				65FD8F491CDA2B380046D5D6 /* RunLoop.framework in Frameworks */,
+				65FD8F4A1CDA2B380046D5D6 /* UV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +112,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CBF4911CCA1B40004C27B4 /* Event.framework in Frameworks */,
+				65FD8F4B1CDA2B510046D5D6 /* Boilerplate.framework in Frameworks */,
+				65FD8F4C1CDA2B510046D5D6 /* ExecutionContext.framework in Frameworks */,
+				65FD8F4D1CDA2B510046D5D6 /* Foundation3.framework in Frameworks */,
+				65FD8F4E1CDA2B510046D5D6 /* Result.framework in Frameworks */,
+				65FD8F4F1CDA2B510046D5D6 /* RunLoop.framework in Frameworks */,
+				65FD8F501CDA2B510046D5D6 /* UV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +127,7 @@
 		65CBF47C1CCA1B40004C27B4 = {
 			isa = PBXGroup;
 			children = (
+				65FD8EC41CDA2B080046D5D6 /* Frameworks */,
 				65CBF4881CCA1B40004C27B4 /* Event */,
 				65CBF4941CCA1B40004C27B4 /* EventTests */,
 				65CBF4871CCA1B40004C27B4 /* Products */,
@@ -90,6 +161,67 @@
 				65CBF4971CCA1B40004C27B4 /* Info.plist */,
 			);
 			path = EventTests;
+			sourceTree = "<group>";
+		};
+		65FD8EC41CDA2B080046D5D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65FD8EC51CDA2B080046D5D6 /* iOS */,
+				65FD8EDA1CDA2B080046D5D6 /* Mac */,
+				65FD8EE71CDA2B080046D5D6 /* tvOS */,
+				65FD8EF71CDA2B080046D5D6 /* watchOS */,
+			);
+			name = Frameworks;
+			path = Carthage/Build;
+			sourceTree = "<group>";
+		};
+		65FD8EC51CDA2B080046D5D6 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				65FD8ECD1CDA2B080046D5D6 /* Boilerplate.framework */,
+				65FD8ED11CDA2B080046D5D6 /* ExecutionContext.framework */,
+				65FD8ED41CDA2B080046D5D6 /* Foundation3.framework */,
+				65FD8ED61CDA2B080046D5D6 /* Result.framework */,
+				65FD8ED81CDA2B080046D5D6 /* RunLoop.framework */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		65FD8EDA1CDA2B080046D5D6 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				65FD8EDB1CDA2B080046D5D6 /* Boilerplate.framework */,
+				65FD8EDD1CDA2B080046D5D6 /* ExecutionContext.framework */,
+				65FD8EDF1CDA2B080046D5D6 /* Foundation3.framework */,
+				65FD8EE11CDA2B080046D5D6 /* Result.framework */,
+				65FD8EE31CDA2B080046D5D6 /* RunLoop.framework */,
+				65FD8EE51CDA2B080046D5D6 /* UV.framework */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		65FD8EE71CDA2B080046D5D6 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				65FD8EEB1CDA2B080046D5D6 /* Boilerplate.framework */,
+				65FD8EEF1CDA2B080046D5D6 /* ExecutionContext.framework */,
+				65FD8EF11CDA2B080046D5D6 /* Foundation3.framework */,
+				65FD8EF31CDA2B080046D5D6 /* Result.framework */,
+				65FD8EF51CDA2B080046D5D6 /* RunLoop.framework */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
+		65FD8EF71CDA2B080046D5D6 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				65FD8EFB1CDA2B080046D5D6 /* Boilerplate.framework */,
+				65FD8EFD1CDA2B080046D5D6 /* ExecutionContext.framework */,
+				65FD8F011CDA2B080046D5D6 /* Foundation3.framework */,
+				65FD8F031CDA2B080046D5D6 /* Result.framework */,
+				65FD8F051CDA2B080046D5D6 /* RunLoop.framework */,
+			);
+			path = watchOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +262,7 @@
 				65CBF48C1CCA1B40004C27B4 /* Sources */,
 				65CBF48D1CCA1B40004C27B4 /* Frameworks */,
 				65CBF48E1CCA1B40004C27B4 /* Resources */,
+				65FD8F511CDA2B570046D5D6 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,6 +454,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Event/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -341,6 +481,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Event/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -355,6 +502,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = EventTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.EventTests;
@@ -366,6 +517,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = EventTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.EventTests;
