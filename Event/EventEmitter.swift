@@ -16,7 +16,7 @@
 
 import Foundation
 
-public struct Listener {
+internal struct Listener {
     private let _id:NSUUID
     internal let listener:Any->Void
     internal let event:HashableContainer
@@ -35,32 +35,29 @@ public struct Listener {
 }
 
 extension Listener : Hashable {
-    public var hashValue: Int {
+    internal var hashValue: Int {
         get {
             return self._id.hashValue
         }
     }
 }
 
-public func ==(lhs:Listener, rhs:Listener) -> Bool {
+internal func ==(lhs:Listener, rhs:Listener) -> Bool {
     return lhs._id == rhs._id
 }
 
-public protocol EventEmitterProtocol {
+public protocol EventEmitterProtocol : AnyObject {
     var dispatcher:EventDispatcher {get}
 }
 
+public typealias Off = ()->Void
+
 public extension EventEmitterProtocol {
-    public func on<E : EventProtocol>(event: E, handler:E.Payload->Void) -> Listener {
-        return dispatcher.addListener(event, handler: handler)
-    }
-    
-    public func on<E : EventProtocol>(groupedEvent: CommonEventGroup<E>, handler:E.Payload->Void) -> Listener {
-        return self.on(groupedEvent.event, handler: handler)
-    }
-    
-    public func off(listener:Listener) {
-        dispatcher.removeListener(listener)
+    internal func on<E : EventProtocol>(event: E, handler:E.Payload->Void) -> Off {
+        let listener = dispatcher.addListener(event, handler: handler)
+        return { [weak self]()->Void in
+            self?.dispatcher.removeListener(listener)
+        }
     }
     
     public func emit<E : EventProtocol>(event: E, payload:E.Payload) {

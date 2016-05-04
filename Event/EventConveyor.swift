@@ -16,17 +16,52 @@
 
 import Foundation
 
+internal struct UniqueContainer<T> {
+    private let _id:NSUUID
+    
+    let content:T
+    
+    init(content:T) {
+        self._id = NSUUID()
+        self.content = content
+    }
+}
+
+extension UniqueContainer : Hashable {
+    internal var hashValue: Int {
+        get {
+            return self._id.hashValue
+        }
+    }
+}
+
+internal func ==<T>(lhs:UniqueContainer<T>, rhs:UniqueContainer<T>) -> Bool {
+    return lhs._id == rhs._id
+}
+
 public class EventConveyor<T> {
     public typealias Payload = T
     public typealias Handler = Payload->Void
-    private typealias Recycle = ()->Void
     
-    private let _recycle:Recycle
-    private var _handlers:[Handler]
+    private let _recycle:Off
+    private var _handlers:Set<UniqueContainer<(Handler, EventConveyor)>>
     
-    private init(recycle:Recycle = {}) {
+    private init(recycle:Off = {}) {
         self._recycle = recycle
         self._handlers = []
+    }
+    
+    private convenience init(advise:(Payload->Void)->Off) {
+        var emit:(Payload)->Void = {_ in}
+        
+        let off = advise { payload in
+            emit(payload)
+        }
+        self.init(recycle:off)
+        
+        emit = { [unowned self](payload) in
+            self.emit(payload)
+        }
     }
     
     deinit {
@@ -35,50 +70,46 @@ public class EventConveyor<T> {
     
     private func emit(payload:Payload) {
         for handler in _handlers {
-            handler(payload)
+            handler.content.0(payload)
         }
     }
     
-    public func react(f:Handler) -> EventConveyor<T> {
-        _handlers.append(f)
-        return self
+    public func react(f:Handler) -> Off {
+        let container = UniqueContainer(content: (f, self))
+        
+        _handlers.insert(container)
+        
+        return {
+            self._handlers.remove(container)
+        }
     }
 }
 
 public extension EventConveyor {
     public func map<A>(f:Payload->A) -> EventConveyor<A> {
-        let conveyor = EventConveyor<A>()
-        
-        self.react { payload in
-            conveyor.emit(f(payload))
+        return EventConveyor<A> { fun in
+            self.react { payload in
+                fun(f(payload))
+            }
         }
-        
-        return conveyor
     }
     
     public func filter(f:Payload->Bool) -> EventConveyor<Payload> {
-        let conveyor = EventConveyor<Payload>()
-        
-        self.react { payload in
-            if f(payload) {
-                conveyor.emit(payload)
+        return EventConveyor<Payload> { fun in
+            self.react { payload in
+                if f(payload) {
+                    fun(payload)
+                }
             }
         }
-        
-        return conveyor
     }
 }
 
 public extension EventEmitterProtocol {
     public func on<E : EventProtocol>(event: E) -> EventConveyor<E.Payload> {
-        var conveyor:EventConveyor<E.Payload>? = nil
-        let listener = self.on(event) { (payload:E.Payload)->Void in
-            conveyor?.emit(payload)
+        return EventConveyor<E.Payload> { fun in
+            self.on(event, handler: fun)
         }
-        conveyor = EventConveyor<E.Payload>() {
-            self.off(listener)
-        }
-        return conveyor!
     }
     
     public func on<E : EventProtocol>(groupedEvent: CommonEventGroup<E>) -> EventConveyor<E.Payload> {

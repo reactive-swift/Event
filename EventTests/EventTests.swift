@@ -47,7 +47,7 @@ struct TestEventGroup<E : EventProtocol> {
 class EventEmitterTest : EventEmitterProtocol {
     let dispatcher:EventDispatcher = EventDispatcher()
     
-    func on<E : EventProtocol>(groupedEvent: TestEventGroup<E>, handler:E.Payload->Void) -> Listener {
+    func on<E : EventProtocol>(groupedEvent: TestEventGroup<E>, handler:E.Payload->Void) -> Off {
         return self.on(groupedEvent.event, handler: handler)
     }
     
@@ -75,17 +75,23 @@ class EventTests: XCTestCase {
     func testExample() {
         let eventEmitter = EventEmitterTest()
         
-        eventEmitter.on(.string) { s in
+        let _ = eventEmitter.on(.string) { s in
             print("string:", s)
         }
         
-        eventEmitter.on(.int) { i in
+        let _ = eventEmitter.on(.int) { i in
             print("int:", i)
         }
         
-        eventEmitter.on(.complex) { (s, i) in
+        let _ = eventEmitter.on(.complex) { (s, i) in
             print("complex: string:", s, "int:", i)
         }
+        
+        let off = eventEmitter.on(.int).map({$0 * 2}).react { i in
+            
+        }
+        
+        off()
         
         let semitter = eventEmitter.on(.complex).filter { (s, i) in
             i % 2 == 0
@@ -93,7 +99,7 @@ class EventTests: XCTestCase {
             s + String(i*100)
         }
         
-        semitter.react { string in
+        let _ = semitter.react { string in
             print(string)
         }
         
