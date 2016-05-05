@@ -96,6 +96,9 @@ public func ==(lhs:HashableContainer, rhs:HashableContainer) -> Bool {
 public class EventDispatcher {
     private var registry:Dictionary<HashableContainer,Set<Listener>> = [:]
     
+    public init() {
+    }
+    
     internal func addListener<E : EventProtocol>(event: E, context:ExecutionContextType, handler:E.Payload->Void) -> Listener {
         return context.sync {
             let container = HashableContainer(hashable: event)
