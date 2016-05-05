@@ -54,7 +54,7 @@ public protocol EventEmitterProtocol : AnyObject, ExecutionContextTenantProtocol
 public typealias Off = ()->Void
 
 public extension EventEmitterProtocol {
-    internal func on<E : EventProtocol>(event: E, handler:E.Payload->Void) -> Off {
+    public func on<E : EventProtocol>(event: E, handler:E.Payload->Void) -> Off {
         let listener = dispatcher.addListener(event, context: context, handler: handler)
         return { [weak self]()->Void in
             self?.dispatcher.removeListener(listener, context: self!.context)
