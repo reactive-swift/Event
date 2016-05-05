@@ -48,7 +48,7 @@ public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
     
     public let context: ExecutionContextType
     
-    public func settleIn(context: ExecutionContextType) -> EventConveyor<T> {
+    public func settle(in context: ExecutionContextType) -> EventConveyor<T> {
         return EventConveyor<Payload>(context: context) { fun in
             self.react { payload in
                 fun(payload)
