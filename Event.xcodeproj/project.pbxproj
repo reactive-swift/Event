@@ -30,6 +30,58 @@
 		65FD8F551CDA2B630046D5D6 /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE11CDA2B080046D5D6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65FD8F561CDA2B630046D5D6 /* RunLoop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE31CDA2B080046D5D6 /* RunLoop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65FD8F571CDA2B630046D5D6 /* UV.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE51CDA2B080046D5D6 /* UV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6721CDB6013001A3382 /* Event.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AFC6681CDB6013001A3382 /* Event.framework */; };
+		92AFC6801CDB60C7001A3382 /* XCTest3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AFC67F1CDB60C7001A3382 /* XCTest3.framework */; };
+		92AFC6821CDB60DC001A3382 /* XCTest3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 92AFC67F1CDB60C7001A3382 /* XCTest3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6831CDB60DC001A3382 /* Boilerplate.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ECD1CDA2B080046D5D6 /* Boilerplate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6841CDB60DC001A3382 /* ExecutionContext.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED11CDA2B080046D5D6 /* ExecutionContext.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6851CDB60DC001A3382 /* Foundation3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED41CDA2B080046D5D6 /* Foundation3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6861CDB60DC001A3382 /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED61CDA2B080046D5D6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6871CDB60DC001A3382 /* RunLoop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED81CDA2B080046D5D6 /* RunLoop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6881CDB60E5001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ECD1CDA2B080046D5D6 /* Boilerplate.framework */; };
+		92AFC6891CDB60E5001A3382 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED11CDA2B080046D5D6 /* ExecutionContext.framework */; };
+		92AFC68A1CDB60E5001A3382 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED41CDA2B080046D5D6 /* Foundation3.framework */; };
+		92AFC68B1CDB60E5001A3382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED61CDA2B080046D5D6 /* Result.framework */; };
+		92AFC68C1CDB60E5001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED81CDA2B080046D5D6 /* RunLoop.framework */; };
+		92AFC68D1CDB60F6001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ECD1CDA2B080046D5D6 /* Boilerplate.framework */; };
+		92AFC68E1CDB60F6001A3382 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED11CDA2B080046D5D6 /* ExecutionContext.framework */; };
+		92AFC68F1CDB60F6001A3382 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED41CDA2B080046D5D6 /* Foundation3.framework */; };
+		92AFC6901CDB60F6001A3382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED61CDA2B080046D5D6 /* Result.framework */; };
+		92AFC6911CDB60F6001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED81CDA2B080046D5D6 /* RunLoop.framework */; };
+		92AFC6921CDB6110001A3382 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
+		92AFC6931CDB6110001A3382 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */; };
+		92AFC6941CDB6110001A3382 /* EventConveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* EventConveyor.swift */; };
+		92AFC6951CDB6115001A3382 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4951CCA1B40004C27B4 /* EventTests.swift */; };
+		92AFC6A51CDB613B001A3382 /* Event.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AFC69B1CDB613B001A3382 /* Event.framework */; };
+		92AFC6B21CDB618E001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEB1CDA2B080046D5D6 /* Boilerplate.framework */; };
+		92AFC6B31CDB618E001A3382 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEF1CDA2B080046D5D6 /* ExecutionContext.framework */; };
+		92AFC6B41CDB618E001A3382 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF11CDA2B080046D5D6 /* Foundation3.framework */; };
+		92AFC6B51CDB618E001A3382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF31CDA2B080046D5D6 /* Result.framework */; };
+		92AFC6B61CDB618E001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF51CDA2B080046D5D6 /* RunLoop.framework */; };
+		92AFC6B71CDB618F001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEB1CDA2B080046D5D6 /* Boilerplate.framework */; };
+		92AFC6B81CDB618F001A3382 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEF1CDA2B080046D5D6 /* ExecutionContext.framework */; };
+		92AFC6B91CDB618F001A3382 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF11CDA2B080046D5D6 /* Foundation3.framework */; };
+		92AFC6BA1CDB618F001A3382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF31CDA2B080046D5D6 /* Result.framework */; };
+		92AFC6BB1CDB618F001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF51CDA2B080046D5D6 /* RunLoop.framework */; };
+		92AFC6BD1CDB61A5001A3382 /* Boilerplate.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEB1CDA2B080046D5D6 /* Boilerplate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6BE1CDB61A5001A3382 /* ExecutionContext.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEF1CDA2B080046D5D6 /* ExecutionContext.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6BF1CDB61A5001A3382 /* Foundation3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF11CDA2B080046D5D6 /* Foundation3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6C01CDB61A5001A3382 /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF31CDA2B080046D5D6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6C11CDB61A5001A3382 /* RunLoop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF51CDA2B080046D5D6 /* RunLoop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92AFC6C21CDB61B0001A3382 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
+		92AFC6C31CDB61B0001A3382 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */; };
+		92AFC6C41CDB61B0001A3382 /* EventConveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* EventConveyor.swift */; };
+		92AFC6C51CDB61B4001A3382 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4951CCA1B40004C27B4 /* EventTests.swift */; };
+		92AFC6D31CDB6266001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EFB1CDA2B080046D5D6 /* Boilerplate.framework */; };
+		92AFC6D41CDB6266001A3382 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EFD1CDA2B080046D5D6 /* ExecutionContext.framework */; };
+		92AFC6D51CDB6266001A3382 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8F011CDA2B080046D5D6 /* Foundation3.framework */; };
+		92AFC6D61CDB6266001A3382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8F031CDA2B080046D5D6 /* Result.framework */; };
+		92AFC6D71CDB6266001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8F051CDA2B080046D5D6 /* RunLoop.framework */; };
+		92AFC6D81CDB6277001A3382 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
+		92AFC6D91CDB6277001A3382 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */; };
+		92AFC6DA1CDB6277001A3382 /* EventConveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* EventConveyor.swift */; };
+		92F8AF011CDB5F9F00938F50 /* XCTest3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F8AF001CDB5F9F00938F50 /* XCTest3.framework */; };
+		92F8AF021CDB5FBB00938F50 /* XCTest3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 92F8AF001CDB5F9F00938F50 /* XCTest3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +90,20 @@
 			containerPortal = 65CBF47D1CCA1B40004C27B4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 65CBF4851CCA1B40004C27B4;
+			remoteInfo = Event;
+		};
+		92AFC6731CDB6013001A3382 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65CBF47D1CCA1B40004C27B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92AFC6671CDB6013001A3382;
+			remoteInfo = Event;
+		};
+		92AFC6A61CDB613B001A3382 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65CBF47D1CCA1B40004C27B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92AFC69A1CDB613B001A3382;
 			remoteInfo = Event;
 		};
 /* End PBXContainerItemProxy section */
@@ -52,9 +118,41 @@
 				65FD8F521CDA2B630046D5D6 /* Boilerplate.framework in Copy Frameworks */,
 				65FD8F531CDA2B630046D5D6 /* ExecutionContext.framework in Copy Frameworks */,
 				65FD8F541CDA2B630046D5D6 /* Foundation3.framework in Copy Frameworks */,
+				92F8AF021CDB5FBB00938F50 /* XCTest3.framework in Copy Frameworks */,
 				65FD8F551CDA2B630046D5D6 /* Result.framework in Copy Frameworks */,
 				65FD8F561CDA2B630046D5D6 /* RunLoop.framework in Copy Frameworks */,
 				65FD8F571CDA2B630046D5D6 /* UV.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6811CDB60CD001A3382 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				92AFC6821CDB60DC001A3382 /* XCTest3.framework in Copy Frameworks */,
+				92AFC6831CDB60DC001A3382 /* Boilerplate.framework in Copy Frameworks */,
+				92AFC6841CDB60DC001A3382 /* ExecutionContext.framework in Copy Frameworks */,
+				92AFC6851CDB60DC001A3382 /* Foundation3.framework in Copy Frameworks */,
+				92AFC6861CDB60DC001A3382 /* Result.framework in Copy Frameworks */,
+				92AFC6871CDB60DC001A3382 /* RunLoop.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6BC1CDB6198001A3382 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				92AFC6BD1CDB61A5001A3382 /* Boilerplate.framework in Copy Frameworks */,
+				92AFC6BE1CDB61A5001A3382 /* ExecutionContext.framework in Copy Frameworks */,
+				92AFC6BF1CDB61A5001A3382 /* Foundation3.framework in Copy Frameworks */,
+				92AFC6C01CDB61A5001A3382 /* Result.framework in Copy Frameworks */,
+				92AFC6C11CDB61A5001A3382 /* RunLoop.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,7 +162,7 @@
 /* Begin PBXFileReference section */
 		65CBF4861CCA1B40004C27B4 /* Event.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Event.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CBF48B1CCA1B40004C27B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65CBF4901CCA1B40004C27B4 /* EventTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65CBF4901CCA1B40004C27B4 /* EventTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EventTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CBF4951CCA1B40004C27B4 /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		65CBF4971CCA1B40004C27B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65CBF4A01CCA2D11004C27B4 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -91,6 +189,13 @@
 		65FD8F011CDA2B080046D5D6 /* Foundation3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Foundation3.framework; sourceTree = "<group>"; };
 		65FD8F031CDA2B080046D5D6 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = "<group>"; };
 		65FD8F051CDA2B080046D5D6 /* RunLoop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RunLoop.framework; sourceTree = "<group>"; };
+		92AFC6681CDB6013001A3382 /* Event.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Event.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92AFC6711CDB6013001A3382 /* EventTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EventTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92AFC67F1CDB60C7001A3382 /* XCTest3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XCTest3.framework; sourceTree = "<group>"; };
+		92AFC69B1CDB613B001A3382 /* Event.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Event.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92AFC6A41CDB613B001A3382 /* EventTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EventTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92AFC6CB1CDB61EA001A3382 /* Event.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Event.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F8AF001CDB5F9F00938F50 /* XCTest3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XCTest3.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +219,74 @@
 				65CBF4911CCA1B40004C27B4 /* Event.framework in Frameworks */,
 				65FD8F4B1CDA2B510046D5D6 /* Boilerplate.framework in Frameworks */,
 				65FD8F4C1CDA2B510046D5D6 /* ExecutionContext.framework in Frameworks */,
+				92F8AF011CDB5F9F00938F50 /* XCTest3.framework in Frameworks */,
 				65FD8F4D1CDA2B510046D5D6 /* Foundation3.framework in Frameworks */,
 				65FD8F4E1CDA2B510046D5D6 /* Result.framework in Frameworks */,
 				65FD8F4F1CDA2B510046D5D6 /* RunLoop.framework in Frameworks */,
 				65FD8F501CDA2B510046D5D6 /* UV.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6641CDB6013001A3382 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AFC68F1CDB60F6001A3382 /* Foundation3.framework in Frameworks */,
+				92AFC68D1CDB60F6001A3382 /* Boilerplate.framework in Frameworks */,
+				92AFC6911CDB60F6001A3382 /* RunLoop.framework in Frameworks */,
+				92AFC68E1CDB60F6001A3382 /* ExecutionContext.framework in Frameworks */,
+				92AFC6901CDB60F6001A3382 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC66E1CDB6013001A3382 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AFC6721CDB6013001A3382 /* Event.framework in Frameworks */,
+				92AFC6801CDB60C7001A3382 /* XCTest3.framework in Frameworks */,
+				92AFC6881CDB60E5001A3382 /* Boilerplate.framework in Frameworks */,
+				92AFC6891CDB60E5001A3382 /* ExecutionContext.framework in Frameworks */,
+				92AFC68A1CDB60E5001A3382 /* Foundation3.framework in Frameworks */,
+				92AFC68B1CDB60E5001A3382 /* Result.framework in Frameworks */,
+				92AFC68C1CDB60E5001A3382 /* RunLoop.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6971CDB613B001A3382 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AFC6B41CDB618E001A3382 /* Foundation3.framework in Frameworks */,
+				92AFC6B21CDB618E001A3382 /* Boilerplate.framework in Frameworks */,
+				92AFC6B61CDB618E001A3382 /* RunLoop.framework in Frameworks */,
+				92AFC6B31CDB618E001A3382 /* ExecutionContext.framework in Frameworks */,
+				92AFC6B51CDB618E001A3382 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6A11CDB613B001A3382 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AFC6BB1CDB618F001A3382 /* RunLoop.framework in Frameworks */,
+				92AFC6B71CDB618F001A3382 /* Boilerplate.framework in Frameworks */,
+				92AFC6A51CDB613B001A3382 /* Event.framework in Frameworks */,
+				92AFC6BA1CDB618F001A3382 /* Result.framework in Frameworks */,
+				92AFC6B81CDB618F001A3382 /* ExecutionContext.framework in Frameworks */,
+				92AFC6B91CDB618F001A3382 /* Foundation3.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6C71CDB61EA001A3382 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AFC6D51CDB6266001A3382 /* Foundation3.framework in Frameworks */,
+				92AFC6D31CDB6266001A3382 /* Boilerplate.framework in Frameworks */,
+				92AFC6D71CDB6266001A3382 /* RunLoop.framework in Frameworks */,
+				92AFC6D41CDB6266001A3382 /* ExecutionContext.framework in Frameworks */,
+				92AFC6D61CDB6266001A3382 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,9 +296,9 @@
 		65CBF47C1CCA1B40004C27B4 = {
 			isa = PBXGroup;
 			children = (
-				65FD8EC41CDA2B080046D5D6 /* Frameworks */,
 				65CBF4881CCA1B40004C27B4 /* Event */,
 				65CBF4941CCA1B40004C27B4 /* EventTests */,
+				65FD8EC41CDA2B080046D5D6 /* Frameworks */,
 				65CBF4871CCA1B40004C27B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,7 +307,12 @@
 			isa = PBXGroup;
 			children = (
 				65CBF4861CCA1B40004C27B4 /* Event.framework */,
-				65CBF4901CCA1B40004C27B4 /* EventTests.xctest */,
+				65CBF4901CCA1B40004C27B4 /* EventTests-OSX.xctest */,
+				92AFC6681CDB6013001A3382 /* Event.framework */,
+				92AFC6711CDB6013001A3382 /* EventTests-iOS.xctest */,
+				92AFC69B1CDB613B001A3382 /* Event.framework */,
+				92AFC6A41CDB613B001A3382 /* EventTests-tvOS.xctest */,
+				92AFC6CB1CDB61EA001A3382 /* Event.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,7 +334,8 @@
 				65CBF4951CCA1B40004C27B4 /* EventTests.swift */,
 				65CBF4971CCA1B40004C27B4 /* Info.plist */,
 			);
-			path = EventTests;
+			name = EventTests;
+			path = Tests/Event;
 			sourceTree = "<group>";
 		};
 		65FD8EC41CDA2B080046D5D6 /* Frameworks */ = {
@@ -178,6 +353,7 @@
 		65FD8EC51CDA2B080046D5D6 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				92AFC67F1CDB60C7001A3382 /* XCTest3.framework */,
 				65FD8ECD1CDA2B080046D5D6 /* Boilerplate.framework */,
 				65FD8ED11CDA2B080046D5D6 /* ExecutionContext.framework */,
 				65FD8ED41CDA2B080046D5D6 /* Foundation3.framework */,
@@ -190,6 +366,7 @@
 		65FD8EDA1CDA2B080046D5D6 /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				92F8AF001CDB5F9F00938F50 /* XCTest3.framework */,
 				65FD8EDB1CDA2B080046D5D6 /* Boilerplate.framework */,
 				65FD8EDD1CDA2B080046D5D6 /* ExecutionContext.framework */,
 				65FD8EDF1CDA2B080046D5D6 /* Foundation3.framework */,
@@ -234,12 +411,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		92AFC6651CDB6013001A3382 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6981CDB613B001A3382 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6C81CDB61EA001A3382 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		65CBF4851CCA1B40004C27B4 /* Event */ = {
+		65CBF4851CCA1B40004C27B4 /* Event-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 65CBF49A1CCA1B40004C27B4 /* Build configuration list for PBXNativeTarget "Event" */;
+			buildConfigurationList = 65CBF49A1CCA1B40004C27B4 /* Build configuration list for PBXNativeTarget "Event-OSX" */;
 			buildPhases = (
 				65CBF4811CCA1B40004C27B4 /* Sources */,
 				65CBF4821CCA1B40004C27B4 /* Frameworks */,
@@ -250,14 +448,14 @@
 			);
 			dependencies = (
 			);
-			name = Event;
+			name = "Event-OSX";
 			productName = Event;
 			productReference = 65CBF4861CCA1B40004C27B4 /* Event.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		65CBF48F1CCA1B40004C27B4 /* EventTests */ = {
+		65CBF48F1CCA1B40004C27B4 /* EventTests-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 65CBF49D1CCA1B40004C27B4 /* Build configuration list for PBXNativeTarget "EventTests" */;
+			buildConfigurationList = 65CBF49D1CCA1B40004C27B4 /* Build configuration list for PBXNativeTarget "EventTests-OSX" */;
 			buildPhases = (
 				65CBF48C1CCA1B40004C27B4 /* Sources */,
 				65CBF48D1CCA1B40004C27B4 /* Frameworks */,
@@ -269,10 +467,102 @@
 			dependencies = (
 				65CBF4931CCA1B40004C27B4 /* PBXTargetDependency */,
 			);
-			name = EventTests;
+			name = "EventTests-OSX";
 			productName = EventTests;
-			productReference = 65CBF4901CCA1B40004C27B4 /* EventTests.xctest */;
+			productReference = 65CBF4901CCA1B40004C27B4 /* EventTests-OSX.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		92AFC6671CDB6013001A3382 /* Event-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92AFC67D1CDB6013001A3382 /* Build configuration list for PBXNativeTarget "Event-iOS" */;
+			buildPhases = (
+				92AFC6631CDB6013001A3382 /* Sources */,
+				92AFC6641CDB6013001A3382 /* Frameworks */,
+				92AFC6651CDB6013001A3382 /* Headers */,
+				92AFC6661CDB6013001A3382 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Event-iOS";
+			productName = Event;
+			productReference = 92AFC6681CDB6013001A3382 /* Event.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		92AFC6701CDB6013001A3382 /* EventTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92AFC67E1CDB6013001A3382 /* Build configuration list for PBXNativeTarget "EventTests-iOS" */;
+			buildPhases = (
+				92AFC66D1CDB6013001A3382 /* Sources */,
+				92AFC66E1CDB6013001A3382 /* Frameworks */,
+				92AFC66F1CDB6013001A3382 /* Resources */,
+				92AFC6811CDB60CD001A3382 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92AFC6741CDB6013001A3382 /* PBXTargetDependency */,
+			);
+			name = "EventTests-iOS";
+			productName = EventTests;
+			productReference = 92AFC6711CDB6013001A3382 /* EventTests-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		92AFC69A1CDB613B001A3382 /* Event-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92AFC6AC1CDB613B001A3382 /* Build configuration list for PBXNativeTarget "Event-tvOS" */;
+			buildPhases = (
+				92AFC6961CDB613B001A3382 /* Sources */,
+				92AFC6971CDB613B001A3382 /* Frameworks */,
+				92AFC6981CDB613B001A3382 /* Headers */,
+				92AFC6991CDB613B001A3382 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Event-tvOS";
+			productName = Event;
+			productReference = 92AFC69B1CDB613B001A3382 /* Event.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		92AFC6A31CDB613B001A3382 /* EventTests-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92AFC6AF1CDB613B001A3382 /* Build configuration list for PBXNativeTarget "EventTests-tvOS" */;
+			buildPhases = (
+				92AFC6A01CDB613B001A3382 /* Sources */,
+				92AFC6A11CDB613B001A3382 /* Frameworks */,
+				92AFC6A21CDB613B001A3382 /* Resources */,
+				92AFC6BC1CDB6198001A3382 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92AFC6A71CDB613B001A3382 /* PBXTargetDependency */,
+			);
+			name = "EventTests-tvOS";
+			productName = EventTests;
+			productReference = 92AFC6A41CDB613B001A3382 /* EventTests-tvOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		92AFC6CA1CDB61EA001A3382 /* Event-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92AFC6D01CDB61EB001A3382 /* Build configuration list for PBXNativeTarget "Event-watchOS" */;
+			buildPhases = (
+				92AFC6C61CDB61EA001A3382 /* Sources */,
+				92AFC6C71CDB61EA001A3382 /* Frameworks */,
+				92AFC6C81CDB61EA001A3382 /* Headers */,
+				92AFC6C91CDB61EA001A3382 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Event-watchOS";
+			productName = Event;
+			productReference = 92AFC6CB1CDB61EA001A3382 /* Event.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -290,6 +580,21 @@
 					65CBF48F1CCA1B40004C27B4 = {
 						CreatedOnToolsVersion = 7.3;
 					};
+					92AFC6671CDB6013001A3382 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					92AFC6701CDB6013001A3382 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					92AFC69A1CDB613B001A3382 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					92AFC6A31CDB613B001A3382 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					92AFC6CA1CDB61EA001A3382 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 				};
 			};
 			buildConfigurationList = 65CBF4801CCA1B40004C27B4 /* Build configuration list for PBXProject "Event" */;
@@ -304,8 +609,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				65CBF4851CCA1B40004C27B4 /* Event */,
-				65CBF48F1CCA1B40004C27B4 /* EventTests */,
+				65CBF4851CCA1B40004C27B4 /* Event-OSX */,
+				65CBF48F1CCA1B40004C27B4 /* EventTests-OSX */,
+				92AFC6671CDB6013001A3382 /* Event-iOS */,
+				92AFC6701CDB6013001A3382 /* EventTests-iOS */,
+				92AFC69A1CDB613B001A3382 /* Event-tvOS */,
+				92AFC6A31CDB613B001A3382 /* EventTests-tvOS */,
+				92AFC6CA1CDB61EA001A3382 /* Event-watchOS */,
 			);
 		};
 /* End PBXProject section */
@@ -319,6 +629,41 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		65CBF48E1CCA1B40004C27B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6661CDB6013001A3382 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC66F1CDB6013001A3382 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6991CDB613B001A3382 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6A21CDB613B001A3382 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6C91CDB61EA001A3382 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -346,13 +691,69 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		92AFC6631CDB6013001A3382 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AFC6921CDB6110001A3382 /* Event.swift in Sources */,
+				92AFC6941CDB6110001A3382 /* EventConveyor.swift in Sources */,
+				92AFC6931CDB6110001A3382 /* EventEmitter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC66D1CDB6013001A3382 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AFC6951CDB6115001A3382 /* EventTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6961CDB613B001A3382 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AFC6C21CDB61B0001A3382 /* Event.swift in Sources */,
+				92AFC6C41CDB61B0001A3382 /* EventConveyor.swift in Sources */,
+				92AFC6C31CDB61B0001A3382 /* EventEmitter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6A01CDB613B001A3382 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AFC6C51CDB61B4001A3382 /* EventTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92AFC6C61CDB61EA001A3382 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92AFC6D81CDB6277001A3382 /* Event.swift in Sources */,
+				92AFC6DA1CDB6277001A3382 /* EventConveyor.swift in Sources */,
+				92AFC6D91CDB6277001A3382 /* EventEmitter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		65CBF4931CCA1B40004C27B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 65CBF4851CCA1B40004C27B4 /* Event */;
+			target = 65CBF4851CCA1B40004C27B4 /* Event-OSX */;
 			targetProxy = 65CBF4921CCA1B40004C27B4 /* PBXContainerItemProxy */;
+		};
+		92AFC6741CDB6013001A3382 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92AFC6671CDB6013001A3382 /* Event-iOS */;
+			targetProxy = 92AFC6731CDB6013001A3382 /* PBXContainerItemProxy */;
+		};
+		92AFC6A71CDB613B001A3382 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92AFC69A1CDB613B001A3382 /* Event-tvOS */;
+			targetProxy = 92AFC6A61CDB613B001A3382 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -397,7 +798,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -441,7 +842,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -467,7 +868,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -491,7 +892,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -504,9 +905,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = EventTests/Info.plist;
+				INFOPLIST_FILE = Tests/Event/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.EventTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -519,10 +920,223 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = EventTests/Info.plist;
+				INFOPLIST_FILE = Tests/Event/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.EventTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		92AFC6791CDB6013001A3382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Event/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92AFC67A1CDB6013001A3382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Event/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92AFC67B1CDB6013001A3382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = EventTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		92AFC67C1CDB6013001A3382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = EventTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92AFC6AD1CDB613B001A3382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = Event/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		92AFC6AE1CDB613B001A3382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = Event/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92AFC6B01CDB613B001A3382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = EventTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		92AFC6B11CDB613B001A3382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = EventTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92AFC6D11CDB61EB001A3382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = Event/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		92AFC6D21CDB61EB001A3382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = Event/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -538,7 +1152,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65CBF49A1CCA1B40004C27B4 /* Build configuration list for PBXNativeTarget "Event" */ = {
+		65CBF49A1CCA1B40004C27B4 /* Build configuration list for PBXNativeTarget "Event-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				65CBF49B1CCA1B40004C27B4 /* Debug */,
@@ -547,11 +1161,56 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65CBF49D1CCA1B40004C27B4 /* Build configuration list for PBXNativeTarget "EventTests" */ = {
+		65CBF49D1CCA1B40004C27B4 /* Build configuration list for PBXNativeTarget "EventTests-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				65CBF49E1CCA1B40004C27B4 /* Debug */,
 				65CBF49F1CCA1B40004C27B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92AFC67D1CDB6013001A3382 /* Build configuration list for PBXNativeTarget "Event-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92AFC6791CDB6013001A3382 /* Debug */,
+				92AFC67A1CDB6013001A3382 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92AFC67E1CDB6013001A3382 /* Build configuration list for PBXNativeTarget "EventTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92AFC67B1CDB6013001A3382 /* Debug */,
+				92AFC67C1CDB6013001A3382 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92AFC6AC1CDB613B001A3382 /* Build configuration list for PBXNativeTarget "Event-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92AFC6AD1CDB613B001A3382 /* Debug */,
+				92AFC6AE1CDB613B001A3382 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92AFC6AF1CDB613B001A3382 /* Build configuration list for PBXNativeTarget "EventTests-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92AFC6B01CDB613B001A3382 /* Debug */,
+				92AFC6B11CDB613B001A3382 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92AFC6D01CDB61EB001A3382 /* Build configuration list for PBXNativeTarget "Event-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92AFC6D11CDB61EB001A3382 /* Debug */,
+				92AFC6D21CDB61EB001A3382 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
