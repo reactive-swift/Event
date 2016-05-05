@@ -64,10 +64,6 @@ public extension EventEmitterProtocol {
     public func emit<E : EventProtocol>(event: E, payload:E.Payload) {
         dispatcher.dispatch(event, context: context, payload: payload)
     }
-    
-    public func emit<E : EventProtocol>(groupedEvent: CommonEventGroup<E>, payload:E.Payload) {
-        dispatcher.dispatch(groupedEvent.event, context: context, payload: payload)
-    }
 }
 
 public struct HashableContainer : Hashable {

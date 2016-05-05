@@ -36,3 +36,13 @@ public struct CommonEventGroup<E : EventProtocol> {
         return CommonEventGroup<ErrorEvent>(.event)
     }
 }
+
+public extension EventEmitterProtocol {
+    public func on<E : EventProtocol>(groupedEvent: CommonEventGroup<E>) -> EventConveyor<E.Payload> {
+        return self.on(groupedEvent.event)
+    }
+    
+    public func emit<E : EventProtocol>(groupedEvent: CommonEventGroup<E>, payload:E.Payload) {
+        dispatcher.dispatch(groupedEvent.event, context: context, payload: payload)
+    }
+}

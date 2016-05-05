@@ -129,8 +129,4 @@ public extension EventEmitterProtocol {
             self.on(event, handler: fun)
         }
     }
-    
-    public func on<E : EventProtocol>(groupedEvent: CommonEventGroup<E>) -> EventConveyor<E.Payload> {
-        return self.on(groupedEvent.event)
-    }
 }
