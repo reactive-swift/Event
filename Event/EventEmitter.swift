@@ -64,10 +64,6 @@ public extension EventEmitterProtocol {
     public func emit<E : EventProtocol>(event: E, payload:E.Payload) {
         dispatcher.dispatch(event, context: context, payload: payload)
     }
-    
-    public func emit<E : EventProtocol>(groupedEvent: CommonEventGroup<E>, payload:E.Payload) {
-        dispatcher.dispatch(groupedEvent.event, context: context, payload: payload)
-    }
 }
 
 public struct HashableContainer : Hashable {
@@ -99,6 +95,9 @@ public func ==(lhs:HashableContainer, rhs:HashableContainer) -> Bool {
 
 public class EventDispatcher {
     private var registry:Dictionary<HashableContainer,Set<Listener>> = [:]
+    
+    public init() {
+    }
     
     internal func addListener<E : EventProtocol>(event: E, context:ExecutionContextType, handler:E.Payload->Void) -> Listener {
         return context.sync {

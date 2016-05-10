@@ -48,7 +48,7 @@ public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
     
     public let context: ExecutionContextType
     
-    public func settleIn(context: ExecutionContextType) -> EventConveyor<T> {
+    public func settle(in context: ExecutionContextType) -> EventConveyor<T> {
         return EventConveyor<Payload>(context: context) { fun in
             self.react { payload in
                 fun(payload)
@@ -128,9 +128,5 @@ public extension EventEmitterProtocol {
         return EventConveyor<E.Payload>(context: self.context) { fun in
             self.on(event, handler: fun)
         }
-    }
-    
-    public func on<E : EventProtocol>(groupedEvent: CommonEventGroup<E>) -> EventConveyor<E.Payload> {
-        return self.on(groupedEvent.event)
     }
 }

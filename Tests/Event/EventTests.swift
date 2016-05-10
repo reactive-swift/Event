@@ -62,19 +62,19 @@ class EventEmitterTest : EventEmitterProtocol {
 class EventTests: XCTestCase {
     
     func testExample() {
-        let ec = ExecutionContext(kind: .Parallel)
+        let ec = ExecutionContext(kind: .parallel)
         
         let eventEmitter = EventEmitterTest()
         
-        let _ = eventEmitter.on(.string).settleIn(ec).react { s in
+        let _ = eventEmitter.on(.string).settle(in: ec).react { s in
             print("string:", s)
         }
         
-        let _ = eventEmitter.on(.int).settleIn(global).react { i in
+        let _ = eventEmitter.on(.int).settle(in: global).react { i in
             print("int:", i)
         }
         
-        let _ = eventEmitter.on(.complex).settleIn(immediate).react { (s, i) in
+        let _ = eventEmitter.on(.complex).settle(in: immediate).react { (s, i) in
             print("complex: string:", s, "int:", i)
         }
         
