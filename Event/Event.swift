@@ -15,13 +15,14 @@
 //===----------------------------------------------------------------------===//
 
 import Foundation
+import Boilerplate
 
 public protocol EventProtocol : Hashable {
     associatedtype Payload
 }
 
 public enum ErrorEvent : EventProtocol {
-    public typealias Payload = ErrorType
+    public typealias Payload = ErrorProtocol
     case event
 }
 
