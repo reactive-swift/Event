@@ -14,38 +14,27 @@
 		65FD8EBE1CD531160046D5D6 /* EventConveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* EventConveyor.swift */; };
 		65FD8F451CDA2B380046D5D6 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDB1CDA2B080046D5D6 /* Boilerplate.framework */; };
 		65FD8F461CDA2B380046D5D6 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDD1CDA2B080046D5D6 /* ExecutionContext.framework */; };
-		65FD8F471CDA2B380046D5D6 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDF1CDA2B080046D5D6 /* Foundation3.framework */; };
 		65FD8F481CDA2B380046D5D6 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE11CDA2B080046D5D6 /* Result.framework */; };
 		65FD8F491CDA2B380046D5D6 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE31CDA2B080046D5D6 /* RunLoop.framework */; };
-		65FD8F4A1CDA2B380046D5D6 /* UV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE51CDA2B080046D5D6 /* UV.framework */; };
 		65FD8F4B1CDA2B510046D5D6 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDB1CDA2B080046D5D6 /* Boilerplate.framework */; };
 		65FD8F4C1CDA2B510046D5D6 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDD1CDA2B080046D5D6 /* ExecutionContext.framework */; };
-		65FD8F4D1CDA2B510046D5D6 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDF1CDA2B080046D5D6 /* Foundation3.framework */; };
 		65FD8F4E1CDA2B510046D5D6 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE11CDA2B080046D5D6 /* Result.framework */; };
 		65FD8F4F1CDA2B510046D5D6 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE31CDA2B080046D5D6 /* RunLoop.framework */; };
-		65FD8F501CDA2B510046D5D6 /* UV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE51CDA2B080046D5D6 /* UV.framework */; };
 		65FD8F521CDA2B630046D5D6 /* Boilerplate.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDB1CDA2B080046D5D6 /* Boilerplate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65FD8F531CDA2B630046D5D6 /* ExecutionContext.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDD1CDA2B080046D5D6 /* ExecutionContext.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		65FD8F541CDA2B630046D5D6 /* Foundation3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDF1CDA2B080046D5D6 /* Foundation3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65FD8F551CDA2B630046D5D6 /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE11CDA2B080046D5D6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65FD8F561CDA2B630046D5D6 /* RunLoop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE31CDA2B080046D5D6 /* RunLoop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		65FD8F571CDA2B630046D5D6 /* UV.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE51CDA2B080046D5D6 /* UV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92AFC6721CDB6013001A3382 /* Event.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AFC6681CDB6013001A3382 /* Event.framework */; };
-		92AFC6801CDB60C7001A3382 /* XCTest3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AFC67F1CDB60C7001A3382 /* XCTest3.framework */; };
-		92AFC6821CDB60DC001A3382 /* XCTest3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 92AFC67F1CDB60C7001A3382 /* XCTest3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92AFC6831CDB60DC001A3382 /* Boilerplate.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ECD1CDA2B080046D5D6 /* Boilerplate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92AFC6841CDB60DC001A3382 /* ExecutionContext.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED11CDA2B080046D5D6 /* ExecutionContext.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		92AFC6851CDB60DC001A3382 /* Foundation3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED41CDA2B080046D5D6 /* Foundation3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92AFC6861CDB60DC001A3382 /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED61CDA2B080046D5D6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92AFC6871CDB60DC001A3382 /* RunLoop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED81CDA2B080046D5D6 /* RunLoop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92AFC6881CDB60E5001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ECD1CDA2B080046D5D6 /* Boilerplate.framework */; };
 		92AFC6891CDB60E5001A3382 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED11CDA2B080046D5D6 /* ExecutionContext.framework */; };
-		92AFC68A1CDB60E5001A3382 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED41CDA2B080046D5D6 /* Foundation3.framework */; };
 		92AFC68B1CDB60E5001A3382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED61CDA2B080046D5D6 /* Result.framework */; };
 		92AFC68C1CDB60E5001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED81CDA2B080046D5D6 /* RunLoop.framework */; };
 		92AFC68D1CDB60F6001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ECD1CDA2B080046D5D6 /* Boilerplate.framework */; };
 		92AFC68E1CDB60F6001A3382 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED11CDA2B080046D5D6 /* ExecutionContext.framework */; };
-		92AFC68F1CDB60F6001A3382 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED41CDA2B080046D5D6 /* Foundation3.framework */; };
 		92AFC6901CDB60F6001A3382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED61CDA2B080046D5D6 /* Result.framework */; };
 		92AFC6911CDB60F6001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED81CDA2B080046D5D6 /* RunLoop.framework */; };
 		92AFC6921CDB6110001A3382 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
@@ -55,17 +44,14 @@
 		92AFC6A51CDB613B001A3382 /* Event.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AFC69B1CDB613B001A3382 /* Event.framework */; };
 		92AFC6B21CDB618E001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEB1CDA2B080046D5D6 /* Boilerplate.framework */; };
 		92AFC6B31CDB618E001A3382 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEF1CDA2B080046D5D6 /* ExecutionContext.framework */; };
-		92AFC6B41CDB618E001A3382 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF11CDA2B080046D5D6 /* Foundation3.framework */; };
 		92AFC6B51CDB618E001A3382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF31CDA2B080046D5D6 /* Result.framework */; };
 		92AFC6B61CDB618E001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF51CDA2B080046D5D6 /* RunLoop.framework */; };
 		92AFC6B71CDB618F001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEB1CDA2B080046D5D6 /* Boilerplate.framework */; };
 		92AFC6B81CDB618F001A3382 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEF1CDA2B080046D5D6 /* ExecutionContext.framework */; };
-		92AFC6B91CDB618F001A3382 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF11CDA2B080046D5D6 /* Foundation3.framework */; };
 		92AFC6BA1CDB618F001A3382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF31CDA2B080046D5D6 /* Result.framework */; };
 		92AFC6BB1CDB618F001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF51CDA2B080046D5D6 /* RunLoop.framework */; };
 		92AFC6BD1CDB61A5001A3382 /* Boilerplate.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEB1CDA2B080046D5D6 /* Boilerplate.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92AFC6BE1CDB61A5001A3382 /* ExecutionContext.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEF1CDA2B080046D5D6 /* ExecutionContext.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		92AFC6BF1CDB61A5001A3382 /* Foundation3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF11CDA2B080046D5D6 /* Foundation3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92AFC6C01CDB61A5001A3382 /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF31CDA2B080046D5D6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92AFC6C11CDB61A5001A3382 /* RunLoop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF51CDA2B080046D5D6 /* RunLoop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92AFC6C21CDB61B0001A3382 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
@@ -74,14 +60,11 @@
 		92AFC6C51CDB61B4001A3382 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4951CCA1B40004C27B4 /* EventTests.swift */; };
 		92AFC6D31CDB6266001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EFB1CDA2B080046D5D6 /* Boilerplate.framework */; };
 		92AFC6D41CDB6266001A3382 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EFD1CDA2B080046D5D6 /* ExecutionContext.framework */; };
-		92AFC6D51CDB6266001A3382 /* Foundation3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8F011CDA2B080046D5D6 /* Foundation3.framework */; };
 		92AFC6D61CDB6266001A3382 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8F031CDA2B080046D5D6 /* Result.framework */; };
 		92AFC6D71CDB6266001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8F051CDA2B080046D5D6 /* RunLoop.framework */; };
 		92AFC6D81CDB6277001A3382 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
 		92AFC6D91CDB6277001A3382 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */; };
 		92AFC6DA1CDB6277001A3382 /* EventConveyor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* EventConveyor.swift */; };
-		92F8AF011CDB5F9F00938F50 /* XCTest3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F8AF001CDB5F9F00938F50 /* XCTest3.framework */; };
-		92F8AF021CDB5FBB00938F50 /* XCTest3.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 92F8AF001CDB5F9F00938F50 /* XCTest3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,11 +100,8 @@
 			files = (
 				65FD8F521CDA2B630046D5D6 /* Boilerplate.framework in Copy Frameworks */,
 				65FD8F531CDA2B630046D5D6 /* ExecutionContext.framework in Copy Frameworks */,
-				65FD8F541CDA2B630046D5D6 /* Foundation3.framework in Copy Frameworks */,
-				92F8AF021CDB5FBB00938F50 /* XCTest3.framework in Copy Frameworks */,
 				65FD8F551CDA2B630046D5D6 /* Result.framework in Copy Frameworks */,
 				65FD8F561CDA2B630046D5D6 /* RunLoop.framework in Copy Frameworks */,
-				65FD8F571CDA2B630046D5D6 /* UV.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,10 +112,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				92AFC6821CDB60DC001A3382 /* XCTest3.framework in Copy Frameworks */,
 				92AFC6831CDB60DC001A3382 /* Boilerplate.framework in Copy Frameworks */,
 				92AFC6841CDB60DC001A3382 /* ExecutionContext.framework in Copy Frameworks */,
-				92AFC6851CDB60DC001A3382 /* Foundation3.framework in Copy Frameworks */,
 				92AFC6861CDB60DC001A3382 /* Result.framework in Copy Frameworks */,
 				92AFC6871CDB60DC001A3382 /* RunLoop.framework in Copy Frameworks */,
 			);
@@ -150,7 +128,6 @@
 			files = (
 				92AFC6BD1CDB61A5001A3382 /* Boilerplate.framework in Copy Frameworks */,
 				92AFC6BE1CDB61A5001A3382 /* ExecutionContext.framework in Copy Frameworks */,
-				92AFC6BF1CDB61A5001A3382 /* Foundation3.framework in Copy Frameworks */,
 				92AFC6C01CDB61A5001A3382 /* Result.framework in Copy Frameworks */,
 				92AFC6C11CDB61A5001A3382 /* RunLoop.framework in Copy Frameworks */,
 			);
@@ -205,10 +182,8 @@
 			files = (
 				65FD8F451CDA2B380046D5D6 /* Boilerplate.framework in Frameworks */,
 				65FD8F461CDA2B380046D5D6 /* ExecutionContext.framework in Frameworks */,
-				65FD8F471CDA2B380046D5D6 /* Foundation3.framework in Frameworks */,
 				65FD8F481CDA2B380046D5D6 /* Result.framework in Frameworks */,
 				65FD8F491CDA2B380046D5D6 /* RunLoop.framework in Frameworks */,
-				65FD8F4A1CDA2B380046D5D6 /* UV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,11 +194,8 @@
 				65CBF4911CCA1B40004C27B4 /* Event.framework in Frameworks */,
 				65FD8F4B1CDA2B510046D5D6 /* Boilerplate.framework in Frameworks */,
 				65FD8F4C1CDA2B510046D5D6 /* ExecutionContext.framework in Frameworks */,
-				92F8AF011CDB5F9F00938F50 /* XCTest3.framework in Frameworks */,
-				65FD8F4D1CDA2B510046D5D6 /* Foundation3.framework in Frameworks */,
 				65FD8F4E1CDA2B510046D5D6 /* Result.framework in Frameworks */,
 				65FD8F4F1CDA2B510046D5D6 /* RunLoop.framework in Frameworks */,
-				65FD8F501CDA2B510046D5D6 /* UV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +203,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92AFC68F1CDB60F6001A3382 /* Foundation3.framework in Frameworks */,
 				92AFC68D1CDB60F6001A3382 /* Boilerplate.framework in Frameworks */,
 				92AFC6911CDB60F6001A3382 /* RunLoop.framework in Frameworks */,
 				92AFC68E1CDB60F6001A3382 /* ExecutionContext.framework in Frameworks */,
@@ -244,10 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				92AFC6721CDB6013001A3382 /* Event.framework in Frameworks */,
-				92AFC6801CDB60C7001A3382 /* XCTest3.framework in Frameworks */,
 				92AFC6881CDB60E5001A3382 /* Boilerplate.framework in Frameworks */,
 				92AFC6891CDB60E5001A3382 /* ExecutionContext.framework in Frameworks */,
-				92AFC68A1CDB60E5001A3382 /* Foundation3.framework in Frameworks */,
 				92AFC68B1CDB60E5001A3382 /* Result.framework in Frameworks */,
 				92AFC68C1CDB60E5001A3382 /* RunLoop.framework in Frameworks */,
 			);
@@ -257,7 +226,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92AFC6B41CDB618E001A3382 /* Foundation3.framework in Frameworks */,
 				92AFC6B21CDB618E001A3382 /* Boilerplate.framework in Frameworks */,
 				92AFC6B61CDB618E001A3382 /* RunLoop.framework in Frameworks */,
 				92AFC6B31CDB618E001A3382 /* ExecutionContext.framework in Frameworks */,
@@ -274,7 +242,6 @@
 				92AFC6A51CDB613B001A3382 /* Event.framework in Frameworks */,
 				92AFC6BA1CDB618F001A3382 /* Result.framework in Frameworks */,
 				92AFC6B81CDB618F001A3382 /* ExecutionContext.framework in Frameworks */,
-				92AFC6B91CDB618F001A3382 /* Foundation3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +249,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92AFC6D51CDB6266001A3382 /* Foundation3.framework in Frameworks */,
 				92AFC6D31CDB6266001A3382 /* Boilerplate.framework in Frameworks */,
 				92AFC6D71CDB6266001A3382 /* RunLoop.framework in Frameworks */,
 				92AFC6D41CDB6266001A3382 /* ExecutionContext.framework in Frameworks */,
@@ -803,6 +769,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -845,6 +812,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

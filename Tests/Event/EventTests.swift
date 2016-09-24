@@ -11,22 +11,22 @@ import XCTest
 
 import ExecutionContext
 
-enum TestEventString : EventProtocol {
+enum TestEventString : Event {
     typealias Payload = String
     case event
 }
 
-enum TestEventInt : EventProtocol {
+enum TestEventInt : Event {
     typealias Payload = Int
     case event
 }
 
-enum TestEventComplex : EventProtocol {
+enum TestEventComplex : Event {
     typealias Payload = (String, Int)
     case event
 }
 
-struct TestEventGroup<E : EventProtocol> {
+struct TestEventGroup<E : Event> {
     internal let event:E
     
     private init(_ event:E) {
@@ -46,15 +46,15 @@ struct TestEventGroup<E : EventProtocol> {
     }
 }
 
-class EventEmitterTest : EventEmitterProtocol {
+class EventEmitterTest : EventEmitter {
     let dispatcher:EventDispatcher = EventDispatcher()
-    let context: ExecutionContextType = ExecutionContext.current
+    let context: ExecutionContextProtocol = ExecutionContext.current
     
-    func on<E : EventProtocol>(groupedEvent: TestEventGroup<E>) -> EventConveyor<E.Payload> {
+    func on<E : Event>(_ groupedEvent: TestEventGroup<E>) -> EventConveyor<E.Payload> {
         return self.on(groupedEvent.event)
     }
     
-    func emit<E : EventProtocol>(groupedEvent: TestEventGroup<E>, payload:E.Payload) {
+    func emit<E : Event>(_ groupedEvent: TestEventGroup<E>, payload:E.Payload) {
         self.emit(groupedEvent.event, payload: payload)
     }
 }

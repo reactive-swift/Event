@@ -19,7 +19,7 @@ import Foundation
 import ExecutionContext
 
 internal struct UniqueContainer<T> {
-    private let _id:NSUUID
+    internal let _id:NSUUID
     
     let content:T
     
@@ -43,12 +43,12 @@ internal func ==<T>(lhs:UniqueContainer<T>, rhs:UniqueContainer<T>) -> Bool {
 
 public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
     public typealias Payload = T
-    public typealias Handler = Payload->Void
+    public typealias Handler = (Payload)->Void
     public typealias SettledTenant = EventConveyor<T>
     
-    public let context: ExecutionContextType
+    public let context: ExecutionContextProtocol
     
-    public func settle(in context: ExecutionContextType) -> EventConveyor<T> {
+    public func settle(in context: ExecutionContextProtocol) -> EventConveyor<T> {
         return EventConveyor<Payload>(context: context) { fun in
             self.react { payload in
                 fun(payload)
@@ -59,13 +59,13 @@ public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
     private let _recycle:Off
     private var _handlers:Set<UniqueContainer<(Handler, EventConveyor)>>
     
-    private init(context:ExecutionContextType, recycle:Off = {}) {
+    private init(context:ExecutionContextProtocol, recycle:Off = {}) {
         self._recycle = recycle
         self._handlers = []
         self.context = context
     }
     
-    private convenience init(context:ExecutionContextType, advise:(Payload->Void)->Off) {
+    internal convenience init(context:ExecutionContextProtocol, advise:(@escaping (Payload)->Void)->Off) {
         var emit:(Payload)->Void = {_ in}
         
         let off = advise { payload in
@@ -74,7 +74,7 @@ public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
         self.init(context:context, recycle:off)
         
         emit = { [unowned self](payload) in
-            self.emit(payload)
+            self.emit(payload: payload)
         }
     }
     
@@ -104,7 +104,7 @@ public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
 }
 
 public extension EventConveyor {
-    public func map<A>(f:Payload->A) -> EventConveyor<A> {
+    public func map<A>(_ f:@escaping (Payload)->A) -> EventConveyor<A> {
         return EventConveyor<A>(context: self.context) { fun in
             self.react { payload in
                 fun(f(payload))
@@ -112,7 +112,7 @@ public extension EventConveyor {
         }
     }
     
-    public func filter(f:Payload->Bool) -> EventConveyor<Payload> {
+    public func filter(_ f:@escaping (Payload)->Bool) -> EventConveyor<Payload> {
         return EventConveyor<Payload>(context: self.context) { fun in
             self.react { payload in
                 if f(payload) {
@@ -123,8 +123,8 @@ public extension EventConveyor {
     }
 }
 
-public extension EventEmitterProtocol {
-    public func on<E : EventProtocol>(event: E) -> EventConveyor<E.Payload> {
+public extension EventEmitter {
+    public func on<E : Event>(_ event: E) -> EventConveyor<E.Payload> {
         return EventConveyor<E.Payload>(context: self.context) { fun in
             self.on(event, handler: fun)
         }
