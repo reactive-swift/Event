@@ -43,7 +43,7 @@ internal func ==<T>(lhs:UniqueContainer<T>, rhs:UniqueContainer<T>) -> Bool {
 
 public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
     public typealias Payload = T
-    public typealias Handler = @escaping (Payload)->Void
+    public typealias Handler = (Payload)->Void
     public typealias SettledTenant = EventConveyor<T>
     
     public let context: ExecutionContextProtocol
@@ -59,7 +59,7 @@ public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
     private let _recycle:Off
     private var _handlers:Set<UniqueContainer<(Handler, EventConveyor)>>
     
-    private init(context:ExecutionContextProtocol, recycle:Off = {}) {
+    private init(context:ExecutionContextProtocol, recycle:@escaping Off = {}) {
         self._recycle = recycle
         self._handlers = []
         self.context = context
@@ -90,7 +90,7 @@ public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
         }
     }
     
-    public func react(_ f:Handler) -> Off {
+    public func react(_ f:@escaping Handler) -> Off {
         return context.sync {
             let container = UniqueContainer(content: (f, self))
             

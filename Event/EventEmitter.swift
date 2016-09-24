@@ -51,7 +51,7 @@ public protocol EventEmitter : AnyObject, ExecutionContextTenantProtocol {
     var dispatcher:EventDispatcher {get}
 }
 
-public typealias Off = @escaping ()->Void
+public typealias Off = ()->Void
 
 public extension EventEmitter {
     internal func on<E : Event>(_ event: E, handler:@escaping (E.Payload)->Void) -> Off {
