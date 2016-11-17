@@ -39,7 +39,7 @@ public struct CommonEventGroup<E : Event> {
 }
 
 public extension EventEmitter {
-    public func on<E : Event>(_ groupedEvent: CommonEventGroup<E>) -> EventStream<E.Payload> {
+    public func on<E : Event>(_ groupedEvent: CommonEventGroup<E>) -> SignalStream<E.Payload> {
         return self.on(groupedEvent.event)
     }
     

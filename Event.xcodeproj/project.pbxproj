@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6514C27C1DDE164B00681374 /* EventEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C27B1DDE164B00681374 /* EventEndpoint.swift */; };
-		6514C27D1DDE164B00681374 /* EventEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C27B1DDE164B00681374 /* EventEndpoint.swift */; };
-		6514C27E1DDE164B00681374 /* EventEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C27B1DDE164B00681374 /* EventEndpoint.swift */; };
-		6514C27F1DDE164B00681374 /* EventEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C27B1DDE164B00681374 /* EventEndpoint.swift */; };
-		6514C2811DDE175E00681374 /* EventNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C2801DDE175E00681374 /* EventNode.swift */; };
-		6514C2821DDE175E00681374 /* EventNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C2801DDE175E00681374 /* EventNode.swift */; };
-		6514C2831DDE175E00681374 /* EventNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C2801DDE175E00681374 /* EventNode.swift */; };
-		6514C2841DDE175E00681374 /* EventNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C2801DDE175E00681374 /* EventNode.swift */; };
+		6514C27C1DDE164B00681374 /* SignalEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C27B1DDE164B00681374 /* SignalEndpoint.swift */; };
+		6514C27D1DDE164B00681374 /* SignalEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C27B1DDE164B00681374 /* SignalEndpoint.swift */; };
+		6514C27E1DDE164B00681374 /* SignalEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C27B1DDE164B00681374 /* SignalEndpoint.swift */; };
+		6514C27F1DDE164B00681374 /* SignalEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C27B1DDE164B00681374 /* SignalEndpoint.swift */; };
+		6514C2811DDE175E00681374 /* SignalNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C2801DDE175E00681374 /* SignalNode.swift */; };
+		6514C2821DDE175E00681374 /* SignalNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C2801DDE175E00681374 /* SignalNode.swift */; };
+		6514C2831DDE175E00681374 /* SignalNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C2801DDE175E00681374 /* SignalNode.swift */; };
+		6514C2841DDE175E00681374 /* SignalNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514C2801DDE175E00681374 /* SignalNode.swift */; };
 		65CBF4911CCA1B40004C27B4 /* Event.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CBF4861CCA1B40004C27B4 /* Event.framework */; };
 		65CBF4961CCA1B40004C27B4 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4951CCA1B40004C27B4 /* EventTests.swift */; };
 		65CBF4A11CCA2D11004C27B4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
 		65CBF4A31CCA2D62004C27B4 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */; };
-		65FD8EBE1CD531160046D5D6 /* EventStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* EventStream.swift */; };
+		65FD8EBE1CD531160046D5D6 /* SignalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* SignalStream.swift */; };
 		65FD8F451CDA2B380046D5D6 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDB1CDA2B080046D5D6 /* Boilerplate.framework */; };
 		65FD8F461CDA2B380046D5D6 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EDD1CDA2B080046D5D6 /* ExecutionContext.framework */; };
 		65FD8F481CDA2B380046D5D6 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EE11CDA2B080046D5D6 /* Result.framework */; };
@@ -47,7 +47,7 @@
 		92AFC6911CDB60F6001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8ED81CDA2B080046D5D6 /* RunLoop.framework */; };
 		92AFC6921CDB6110001A3382 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
 		92AFC6931CDB6110001A3382 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */; };
-		92AFC6941CDB6110001A3382 /* EventStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* EventStream.swift */; };
+		92AFC6941CDB6110001A3382 /* SignalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* SignalStream.swift */; };
 		92AFC6951CDB6115001A3382 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4951CCA1B40004C27B4 /* EventTests.swift */; };
 		92AFC6A51CDB613B001A3382 /* Event.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AFC69B1CDB613B001A3382 /* Event.framework */; };
 		92AFC6B21CDB618E001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EEB1CDA2B080046D5D6 /* Boilerplate.framework */; };
@@ -64,7 +64,7 @@
 		92AFC6C11CDB61A5001A3382 /* RunLoop.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EF51CDA2B080046D5D6 /* RunLoop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92AFC6C21CDB61B0001A3382 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
 		92AFC6C31CDB61B0001A3382 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */; };
-		92AFC6C41CDB61B0001A3382 /* EventStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* EventStream.swift */; };
+		92AFC6C41CDB61B0001A3382 /* SignalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* SignalStream.swift */; };
 		92AFC6C51CDB61B4001A3382 /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4951CCA1B40004C27B4 /* EventTests.swift */; };
 		92AFC6D31CDB6266001A3382 /* Boilerplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EFB1CDA2B080046D5D6 /* Boilerplate.framework */; };
 		92AFC6D41CDB6266001A3382 /* ExecutionContext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8EFD1CDA2B080046D5D6 /* ExecutionContext.framework */; };
@@ -72,7 +72,7 @@
 		92AFC6D71CDB6266001A3382 /* RunLoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FD8F051CDA2B080046D5D6 /* RunLoop.framework */; };
 		92AFC6D81CDB6277001A3382 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A01CCA2D11004C27B4 /* Event.swift */; };
 		92AFC6D91CDB6277001A3382 /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */; };
-		92AFC6DA1CDB6277001A3382 /* EventStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* EventStream.swift */; };
+		92AFC6DA1CDB6277001A3382 /* SignalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FD8EBD1CD531160046D5D6 /* SignalStream.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,8 +145,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6514C27B1DDE164B00681374 /* EventEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEndpoint.swift; sourceTree = "<group>"; };
-		6514C2801DDE175E00681374 /* EventNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventNode.swift; sourceTree = "<group>"; };
+		6514C27B1DDE164B00681374 /* SignalEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEndpoint.swift; sourceTree = "<group>"; };
+		6514C2801DDE175E00681374 /* SignalNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalNode.swift; sourceTree = "<group>"; };
 		65CBF4861CCA1B40004C27B4 /* Event.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Event.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CBF48B1CCA1B40004C27B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65CBF4901CCA1B40004C27B4 /* EventTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EventTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,7 +154,7 @@
 		65CBF4971CCA1B40004C27B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65CBF4A01CCA2D11004C27B4 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
-		65FD8EBD1CD531160046D5D6 /* EventStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStream.swift; sourceTree = "<group>"; };
+		65FD8EBD1CD531160046D5D6 /* SignalStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalStream.swift; sourceTree = "<group>"; };
 		65FD8ECD1CDA2B080046D5D6 /* Boilerplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Boilerplate.framework; sourceTree = "<group>"; };
 		65FD8ED11CDA2B080046D5D6 /* ExecutionContext.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ExecutionContext.framework; sourceTree = "<group>"; };
 		65FD8ED41CDA2B080046D5D6 /* Foundation3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Foundation3.framework; sourceTree = "<group>"; };
@@ -299,9 +299,9 @@
 				65CBF48B1CCA1B40004C27B4 /* Info.plist */,
 				65CBF4A01CCA2D11004C27B4 /* Event.swift */,
 				65CBF4A21CCA2D62004C27B4 /* EventEmitter.swift */,
-				65FD8EBD1CD531160046D5D6 /* EventStream.swift */,
-				6514C27B1DDE164B00681374 /* EventEndpoint.swift */,
-				6514C2801DDE175E00681374 /* EventNode.swift */,
+				65FD8EBD1CD531160046D5D6 /* SignalStream.swift */,
+				6514C27B1DDE164B00681374 /* SignalEndpoint.swift */,
+				6514C2801DDE175E00681374 /* SignalNode.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -655,10 +655,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6514C2811DDE175E00681374 /* EventNode.swift in Sources */,
+				6514C2811DDE175E00681374 /* SignalNode.swift in Sources */,
 				65CBF4A11CCA2D11004C27B4 /* Event.swift in Sources */,
-				6514C27C1DDE164B00681374 /* EventEndpoint.swift in Sources */,
-				65FD8EBE1CD531160046D5D6 /* EventStream.swift in Sources */,
+				6514C27C1DDE164B00681374 /* SignalEndpoint.swift in Sources */,
+				65FD8EBE1CD531160046D5D6 /* SignalStream.swift in Sources */,
 				65CBF4A31CCA2D62004C27B4 /* EventEmitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,10 +675,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6514C2821DDE175E00681374 /* EventNode.swift in Sources */,
+				6514C2821DDE175E00681374 /* SignalNode.swift in Sources */,
 				92AFC6921CDB6110001A3382 /* Event.swift in Sources */,
-				6514C27D1DDE164B00681374 /* EventEndpoint.swift in Sources */,
-				92AFC6941CDB6110001A3382 /* EventStream.swift in Sources */,
+				6514C27D1DDE164B00681374 /* SignalEndpoint.swift in Sources */,
+				92AFC6941CDB6110001A3382 /* SignalStream.swift in Sources */,
 				92AFC6931CDB6110001A3382 /* EventEmitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,10 +695,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6514C2831DDE175E00681374 /* EventNode.swift in Sources */,
+				6514C2831DDE175E00681374 /* SignalNode.swift in Sources */,
 				92AFC6C21CDB61B0001A3382 /* Event.swift in Sources */,
-				6514C27E1DDE164B00681374 /* EventEndpoint.swift in Sources */,
-				92AFC6C41CDB61B0001A3382 /* EventStream.swift in Sources */,
+				6514C27E1DDE164B00681374 /* SignalEndpoint.swift in Sources */,
+				92AFC6C41CDB61B0001A3382 /* SignalStream.swift in Sources */,
 				92AFC6C31CDB61B0001A3382 /* EventEmitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,10 +715,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6514C2841DDE175E00681374 /* EventNode.swift in Sources */,
+				6514C2841DDE175E00681374 /* SignalNode.swift in Sources */,
 				92AFC6D81CDB6277001A3382 /* Event.swift in Sources */,
-				6514C27F1DDE164B00681374 /* EventEndpoint.swift in Sources */,
-				92AFC6DA1CDB6277001A3382 /* EventStream.swift in Sources */,
+				6514C27F1DDE164B00681374 /* SignalEndpoint.swift in Sources */,
+				92AFC6DA1CDB6277001A3382 /* SignalStream.swift in Sources */,
 				92AFC6D91CDB6277001A3382 /* EventEmitter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

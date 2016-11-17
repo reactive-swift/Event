@@ -50,7 +50,7 @@ class EventEmitterTest : EventEmitter {
     let dispatcher:EventDispatcher = EventDispatcher()
     let context: ExecutionContextProtocol = ExecutionContext.current
     
-    func on<E : Event>(_ groupedEvent: TestEventGroup<E>) -> EventStream<E.Payload> {
+    func on<E : Event>(_ groupedEvent: TestEventGroup<E>) -> SignalStream<E.Payload> {
         return self.on(groupedEvent.event)
     }
     
@@ -62,7 +62,7 @@ class EventEmitterTest : EventEmitter {
 class EventTests: XCTestCase {
     
     func testExample() {
-        let node = EventNode<String>()
+        let node = SignalNode<String>()
         
         let nodeReactOff = node.react { s in
             print("from node", s)

@@ -1,4 +1,4 @@
-//===--- EventNode.swift ----------------------------------------------===//
+//===--- SignalNode.swift ----------------------------------------------===//
 //Copyright (c) 2016 Crossroad Labs s.r.o.
 //
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,7 @@ import Foundation
 
 import ExecutionContext
 
-public class EventNode<T> : EventStream<T>, EventEndpoint {
+public class SignalNode<T> : SignalStream<T>, SignalEndpoint {
     public init(context: ExecutionContextProtocol = ExecutionContext.current) {
         super.init(context: context, recycle: {})
     }

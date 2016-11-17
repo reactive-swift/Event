@@ -1,4 +1,4 @@
-//===--- EventEndpoint.swift ----------------------------------------------===//
+//===--- SignalEndpoint.swift ----------------------------------------------===//
 //Copyright (c) 2016 Crossroad Labs s.r.o.
 //
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,14 +16,14 @@
 
 import Foundation
 
-public protocol EventEndpoint {
+public protocol SignalEndpoint {
     associatedtype Payload
     
     func consume(payload:Payload)
 }
 
-public extension EventStream {
-    func pour<EE : EventEndpoint>(to endpoint: EE) -> Off where EE.Payload == T {
+public extension SignalStream {
+    func pour<EE : SignalEndpoint>(to endpoint: EE) -> Off where EE.Payload == T {
         return self.react(endpoint.consume)
     }
 }
