@@ -61,7 +61,13 @@ class EventEmitterTest : EventEmitter {
 
 class EventTests: XCTestCase {
     
+    let node = EventNode<String>()
+    
     func testExample() {
+        let nodeReactOff = node.react { s in
+            print("from node", s)
+        }
+        
         let ec = ExecutionContext(kind: .parallel)
         
         let eventEmitter = EventEmitterTest()
@@ -69,6 +75,8 @@ class EventTests: XCTestCase {
         let _ = eventEmitter.on(.string).settle(in: ec).react { s in
             print("string:", s)
         }
+        
+        let nodeOff = eventEmitter.on(.string).pour(to: node)
         
         let _ = eventEmitter.on(.int).settle(in: global).react { i in
             print("int:", i)
@@ -100,6 +108,9 @@ class EventTests: XCTestCase {
         eventEmitter.emit(.complex, payload: ("hey", 8))
         
         eventEmitter.emit(.error, payload: NSError(domain: "", code: 1, userInfo: nil))
+        
+        nodeReactOff()
+        nodeOff()
         
         
         // This is an example of a functional test case.

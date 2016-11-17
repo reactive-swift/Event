@@ -59,7 +59,7 @@ public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
     private let _recycle:Off
     private var _handlers:Set<UniqueContainer<(Handler, EventConveyor)>>
     
-    private init(context:ExecutionContextProtocol, recycle:@escaping Off = {}) {
+    internal init(context:ExecutionContextProtocol, recycle:@escaping Off) {
         self._recycle = recycle
         self._handlers = []
         self.context = context
@@ -82,7 +82,7 @@ public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
         _recycle()
     }
     
-    private func emit(payload:Payload) {
+    internal func emit(payload:Payload) {
         context.immediateIfCurrent {
             for handler in self._handlers {
                 handler.content.0(payload)
@@ -113,13 +113,13 @@ public extension EventConveyor {
     }
     
     public func filter(_ f:@escaping (Payload)->Bool) -> EventConveyor<Payload> {
-        return EventConveyor<Payload>(context: self.context) { fun in
+        return EventConveyor<Payload>(context: self.context, advise: { fun in
             self.react { payload in
                 if f(payload) {
                     fun(payload)
                 }
             }
-        }
+        })
     }
 }
 
