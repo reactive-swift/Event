@@ -61,9 +61,9 @@ class EventEmitterTest : EventEmitter {
 
 class EventTests: XCTestCase {
     
-    let node = EventNode<String>()
-    
     func testExample() {
+        let node = EventNode<String>()
+        
         let nodeReactOff = node.react { s in
             print("from node", s)
         }
@@ -76,7 +76,7 @@ class EventTests: XCTestCase {
             print("string:", s)
         }
         
-        let nodeOff = eventEmitter.on(.string).pour(to: node)
+        let nodeOff = eventEmitter.on(.string).map {s in return s + "wtf"}.pour(to: node)
         
         let _ = eventEmitter.on(.int).settle(in: global).react { i in
             print("int:", i)
