@@ -18,7 +18,7 @@ import Foundation
 
 import ExecutionContext
 
-public class EventNode<T> : EventConveyor<T>, EventEndpoint {
+public class EventNode<T> : EventStream<T>, EventEndpoint {
     public init(context: ExecutionContextProtocol = ExecutionContext.current) {
         super.init(context: context, recycle: {})
     }

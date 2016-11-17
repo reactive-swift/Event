@@ -22,7 +22,7 @@ public protocol EventEndpoint {
     func consume(payload:Payload)
 }
 
-public extension EventConveyor {
+public extension EventStream {
     func pour<EE : EventEndpoint>(to endpoint: EE) -> Off where EE.Payload == T {
         return self.react(endpoint.consume)
     }

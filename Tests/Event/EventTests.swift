@@ -50,7 +50,7 @@ class EventEmitterTest : EventEmitter {
     let dispatcher:EventDispatcher = EventDispatcher()
     let context: ExecutionContextProtocol = ExecutionContext.current
     
-    func on<E : Event>(_ groupedEvent: TestEventGroup<E>) -> EventConveyor<E.Payload> {
+    func on<E : Event>(_ groupedEvent: TestEventGroup<E>) -> EventStream<E.Payload> {
         return self.on(groupedEvent.event)
     }
     

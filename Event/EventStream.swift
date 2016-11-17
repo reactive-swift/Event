@@ -1,4 +1,4 @@
-//===--- EventConveyor.swift ----------------------------------------------===//
+//===--- EventStream.swift ----------------------------------------------===//
 //Copyright (c) 2016 Crossroad Labs s.r.o.
 //
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,15 +41,15 @@ internal func ==<T>(lhs:UniqueContainer<T>, rhs:UniqueContainer<T>) -> Bool {
     return lhs._id == rhs._id
 }
 
-public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
+public class EventStream<T> : MovableExecutionContextTenantProtocol {
     public typealias Payload = T
     public typealias Handler = (Payload)->Void
-    public typealias SettledTenant = EventConveyor<T>
+    public typealias SettledTenant = EventStream<T>
     
     public let context: ExecutionContextProtocol
     
-    public func settle(in context: ExecutionContextProtocol) -> EventConveyor<T> {
-        return EventConveyor<Payload>(context: context) { fun in
+    public func settle(in context: ExecutionContextProtocol) -> EventStream<T> {
+        return EventStream<Payload>(context: context) { fun in
             self.react { payload in
                 fun(payload)
             }
@@ -57,7 +57,7 @@ public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
     }
     
     private let _recycle:Off
-    private var _handlers:Set<UniqueContainer<(Handler, EventConveyor)>>
+    private var _handlers:Set<UniqueContainer<(Handler, EventStream)>>
     
     internal init(context:ExecutionContextProtocol, recycle:@escaping Off) {
         self._recycle = recycle
@@ -103,17 +103,17 @@ public class EventConveyor<T> : MovableExecutionContextTenantProtocol {
     }
 }
 
-public extension EventConveyor {
-    public func map<A>(_ f:@escaping (Payload)->A) -> EventConveyor<A> {
-        return EventConveyor<A>(context: self.context) { fun in
+public extension EventStream {
+    public func map<A>(_ f:@escaping (Payload)->A) -> EventStream<A> {
+        return EventStream<A>(context: self.context) { fun in
             self.react { payload in
                 fun(f(payload))
             }
         }
     }
     
-    public func filter(_ f:@escaping (Payload)->Bool) -> EventConveyor<Payload> {
-        return EventConveyor<Payload>(context: self.context, advise: { fun in
+    public func filter(_ f:@escaping (Payload)->Bool) -> EventStream<Payload> {
+        return EventStream<Payload>(context: self.context, advise: { fun in
             self.react { payload in
                 if f(payload) {
                     fun(payload)
@@ -124,8 +124,8 @@ public extension EventConveyor {
 }
 
 public extension EventEmitter {
-    public func on<E : Event>(_ event: E) -> EventConveyor<E.Payload> {
-        return EventConveyor<E.Payload>(context: self.context) { fun in
+    public func on<E : Event>(_ event: E) -> EventStream<E.Payload> {
+        return EventStream<E.Payload>(context: self.context) { fun in
             self.on(event, handler: fun)
         }
     }
