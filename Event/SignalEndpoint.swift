@@ -27,3 +27,17 @@ public extension SignalStream {
         return self.react(endpoint.consume)
     }
 }
+
+public class SignalReactor<T> : SignalEndpoint {
+    let _f: (Payload)->Void
+    
+    public init(_ f: @escaping (Payload)->Void) {
+        self._f = f
+    }
+    
+    public typealias Payload = T
+    
+    public func consume(payload:Payload) {
+        _f(payload)
+    }
+}
