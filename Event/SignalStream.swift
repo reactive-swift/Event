@@ -41,7 +41,14 @@ internal func ==<T>(lhs:UniqueContainer<T>, rhs:UniqueContainer<T>) -> Bool {
     return lhs._id == rhs._id
 }
 
-open class SignalStream<T> : MovableExecutionContextTenantProtocol {
+public protocol SignalStreamProtocol : MovableExecutionContextTenantProtocol {
+    associatedtype Payload
+    typealias Handler = (Payload)->Void
+    
+    func react(_ f:@escaping Handler) -> Off
+}
+
+open class SignalStream<T> : SignalStreamProtocol {
     public typealias Payload = T
     public typealias Handler = (Payload)->Void
     public typealias SettledTenant = SignalStream<T>
@@ -103,7 +110,7 @@ open class SignalStream<T> : MovableExecutionContextTenantProtocol {
     }
 }
 
-public extension SignalStream {
+public extension SignalStreamProtocol {
     public func map<A>(_ f:@escaping (Payload)->A) -> SignalStream<A> {
         return SignalStream<A>(context: self.context) { fun in
             self.react { payload in
