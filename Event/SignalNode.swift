@@ -18,7 +18,10 @@ import Foundation
 
 import ExecutionContext
 
-open class SignalNode<T> : SignalStream<T>, SignalEndpoint {
+public protocol SignalNodeProtocol : SignalStreamProtocol, SignalEndpoint {
+}
+
+open class SignalNode<T> : SignalStream<T>, SignalNodeProtocol {
     public init(context: ExecutionContextProtocol = ExecutionContext.current) {
         super.init(context: context, recycle: {})
     }
