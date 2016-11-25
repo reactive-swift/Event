@@ -41,7 +41,7 @@ internal func ==<T>(lhs:UniqueContainer<T>, rhs:UniqueContainer<T>) -> Bool {
     return lhs._id == rhs._id
 }
 
-public class SignalStream<T> : MovableExecutionContextTenantProtocol {
+open class SignalStream<T> : MovableExecutionContextTenantProtocol {
     public typealias Payload = T
     public typealias Handler = (Payload)->Void
     public typealias SettledTenant = SignalStream<T>
