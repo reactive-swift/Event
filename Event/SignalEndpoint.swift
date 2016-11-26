@@ -22,8 +22,8 @@ public protocol SignalEndpoint {
     func consume(payload:Payload)
 }
 
-public extension SignalStream {
-    func pour<EE : SignalEndpoint>(to endpoint: EE) -> Off where EE.Payload == T {
+public extension SignalStreamProtocol {
+    public func pour<EE : SignalEndpoint>(to endpoint: EE) -> Off where EE.Payload == Payload {
         return self.react(endpoint.consume)
     }
 }
