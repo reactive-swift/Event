@@ -23,8 +23,14 @@ public protocol SignalEndpoint {
 }
 
 public extension SignalStreamProtocol {
-    public func pour<EE : SignalEndpoint>(to endpoint: EE) -> Off where EE.Payload == Payload {
+    public func pour<SE : SignalEndpoint>(to endpoint: SE) -> Off where SE.Payload == Payload {
         return self.react(endpoint.consume)
+    }
+}
+
+public extension SignalEndpoint {
+    public func subscribe<SS : SignalStreamProtocol>(to stream: SS) -> Off where SS.Payload == Payload {
+        return stream.react(self.consume)
     }
 }
 
