@@ -18,11 +18,11 @@ import Foundation
 import ExecutionContext
 
 internal struct Listener {
-    private let _id:NSUUID
-    internal let listener:Any->Void
+    internal let _id:NSUUID
+    internal let listener:(Any)->Void
     internal let event:HashableContainer
     
-    internal init<Payload>(event:HashableContainer, listener:Payload->Void) {
+    internal init<Payload>(event:HashableContainer, listener:@escaping (Payload)->Void) {
         self._id = NSUUID()
         self.event = event
         self.listener = { payload in
@@ -47,28 +47,28 @@ internal func ==(lhs:Listener, rhs:Listener) -> Bool {
     return lhs._id == rhs._id
 }
 
-public protocol EventEmitterProtocol : AnyObject, ExecutionContextTenantProtocol {
+public protocol EventEmitter : AnyObject, ExecutionContextTenantProtocol {
     var dispatcher:EventDispatcher {get}
 }
 
 public typealias Off = ()->Void
 
-public extension EventEmitterProtocol {
-    internal func on<E : EventProtocol>(event: E, handler:E.Payload->Void) -> Off {
-        let listener = dispatcher.addListener(event, context: context, handler: handler)
+public extension EventEmitter {
+    internal func on<E : Event>(_ event: E, handler:@escaping (E.Payload)->Void) -> Off {
+        let listener = dispatcher.addListener(event: event, context: context, handler: handler)
         return { [weak self]()->Void in
-            self?.dispatcher.removeListener(listener, context: self!.context)
+            self?.dispatcher.removeListener(listener: listener, context: self!.context)
         }
     }
     
-    public func emit<E : EventProtocol>(event: E, payload:E.Payload) {
+    public func emit<E : Event>(_ event: E, payload:E.Payload) {
         dispatcher.dispatch(event, context: context, payload: payload)
     }
 }
 
 public struct HashableContainer : Hashable {
     private let _hash:Int
-    private let _equator:(Any)->Bool
+    internal let _equator:(Any)->Bool
     public let value:Any
     
     public init<T: Hashable>(hashable:T) {
@@ -99,7 +99,7 @@ public class EventDispatcher {
     public init() {
     }
     
-    internal func addListener<E : EventProtocol>(event: E, context:ExecutionContextType, handler:E.Payload->Void) -> Listener {
+    internal func addListener<E : Event>(event: E, context:ExecutionContextProtocol, handler:@escaping (E.Payload)->Void) -> Listener {
         return context.sync {
             let container = HashableContainer(hashable: event)
             let listener = Listener(event: container, listener: handler)
@@ -114,13 +114,13 @@ public class EventDispatcher {
         }
     }
     
-    internal func removeListener(listener:Listener, context:ExecutionContextType) {
+    internal func removeListener(listener:Listener, context:ExecutionContextProtocol) {
         context.immediateIfCurrent {
-            self.registry[listener.event]?.remove(listener)
+            let _ = self.registry[listener.event]?.remove(listener)
         }
     }
     
-    internal func dispatch<E : EventProtocol>(event:E, context:ExecutionContextType, payload:E.Payload) {
+    internal func dispatch<E : Event>(_ event:E, context:ExecutionContextProtocol, payload:E.Payload) {
         context.immediateIfCurrent {
             let container = HashableContainer(hashable: event)
             

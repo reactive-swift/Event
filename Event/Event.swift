@@ -17,16 +17,16 @@
 import Foundation
 import Boilerplate
 
-public protocol EventProtocol : Hashable {
+public protocol Event : Hashable {
     associatedtype Payload
 }
 
-public enum ErrorEvent : EventProtocol {
-    public typealias Payload = ErrorProtocol
+public enum ErrorEvent : Event {
+    public typealias Payload = Error
     case event
 }
 
-public struct CommonEventGroup<E : EventProtocol> {
+public struct CommonEventGroup<E : Event> {
     internal let event:E
     
     private init(_ event:E) {
@@ -38,12 +38,12 @@ public struct CommonEventGroup<E : EventProtocol> {
     }
 }
 
-public extension EventEmitterProtocol {
-    public func on<E : EventProtocol>(groupedEvent: CommonEventGroup<E>) -> EventConveyor<E.Payload> {
+public extension EventEmitter {
+    public func on<E : Event>(_ groupedEvent: CommonEventGroup<E>) -> SignalStream<E.Payload> {
         return self.on(groupedEvent.event)
     }
     
-    public func emit<E : EventProtocol>(groupedEvent: CommonEventGroup<E>, payload:E.Payload) {
+    public func emit<E : Event>(_ groupedEvent: CommonEventGroup<E>, payload:E.Payload) {
         dispatcher.dispatch(groupedEvent.event, context: context, payload: payload)
     }
 }

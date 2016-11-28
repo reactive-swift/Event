@@ -11,22 +11,22 @@ import XCTest
 
 import ExecutionContext
 
-enum TestEventString : EventProtocol {
+enum TestEventString : Event {
     typealias Payload = String
     case event
 }
 
-enum TestEventInt : EventProtocol {
+enum TestEventInt : Event {
     typealias Payload = Int
     case event
 }
 
-enum TestEventComplex : EventProtocol {
+enum TestEventComplex : Event {
     typealias Payload = (String, Int)
     case event
 }
 
-struct TestEventGroup<E : EventProtocol> {
+struct TestEventGroup<E : Event> {
     internal let event:E
     
     private init(_ event:E) {
@@ -46,15 +46,15 @@ struct TestEventGroup<E : EventProtocol> {
     }
 }
 
-class EventEmitterTest : EventEmitterProtocol {
+class EventEmitterTest : EventEmitter {
     let dispatcher:EventDispatcher = EventDispatcher()
-    let context: ExecutionContextType = ExecutionContext.current
+    let context: ExecutionContextProtocol = ExecutionContext.current
     
-    func on<E : EventProtocol>(groupedEvent: TestEventGroup<E>) -> EventConveyor<E.Payload> {
+    func on<E : Event>(_ groupedEvent: TestEventGroup<E>) -> SignalStream<E.Payload> {
         return self.on(groupedEvent.event)
     }
     
-    func emit<E : EventProtocol>(groupedEvent: TestEventGroup<E>, payload:E.Payload) {
+    func emit<E : Event>(_ groupedEvent: TestEventGroup<E>, payload:E.Payload) {
         self.emit(groupedEvent.event, payload: payload)
     }
 }
@@ -62,6 +62,12 @@ class EventEmitterTest : EventEmitterProtocol {
 class EventTests: XCTestCase {
     
     func testExample() {
+        let node = SignalNode<String>()
+        
+        let nodeReactOff = node.react { s in
+            print("from node", s)
+        }
+        
         let ec = ExecutionContext(kind: .parallel)
         
         let eventEmitter = EventEmitterTest()
@@ -69,6 +75,8 @@ class EventTests: XCTestCase {
         let _ = eventEmitter.on(.string).settle(in: ec).react { s in
             print("string:", s)
         }
+        
+        let nodeOff = eventEmitter.on(.string).map {s in return s + "wtf"}.pour(to: node)
         
         let _ = eventEmitter.on(.int).settle(in: global).react { i in
             print("int:", i)
@@ -100,6 +108,9 @@ class EventTests: XCTestCase {
         eventEmitter.emit(.complex, payload: ("hey", 8))
         
         eventEmitter.emit(.error, payload: NSError(domain: "", code: 1, userInfo: nil))
+        
+        nodeReactOff()
+        nodeOff()
         
         
         // This is an example of a functional test case.
