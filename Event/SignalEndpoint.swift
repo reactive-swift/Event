@@ -47,3 +47,18 @@ public class SignalReactor<T> : SignalEndpoint {
         _f(payload)
     }
 }
+
+infix operator <=
+infix operator =>
+
+public extension SignalEndpoint {
+    public static func <=(endpoint:Self, payload:Payload?) {
+        if let payload = payload {
+            endpoint.consume(payload: payload)
+        }
+    }
+    
+    public static func =>(payload:Payload?, endpoint:Self) {
+        endpoint <= payload
+    }
+}
