@@ -76,6 +76,8 @@ class EventTests: XCTestCase {
             print("string:", s)
         }
         
+        node <= "some"
+        
         let nodeOff = eventEmitter.on(.string).map {s in return s + "wtf"}.pour(to: node)
         
         let _ = eventEmitter.on(.int).settle(in: global).react { i in

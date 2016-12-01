@@ -48,8 +48,8 @@ public class SignalReactor<T> : SignalEndpoint {
     }
 }
 
-infix operator <=
-infix operator =>
+//infix operator <= : ComparisonPrecedence
+infix operator => : ComparisonPrecedence
 
 public extension SignalEndpoint {
     public static func <=(endpoint:Self, payload:Payload?) {
