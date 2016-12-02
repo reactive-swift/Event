@@ -65,10 +65,19 @@ class EventTests: XCTestCase {
     
     func testExample() {
         let node = SignalNode<String>()
+        let node2 = SignalNode<String>()
+        let nodeSource = SignalNode<String>()
+        
+        nodeSource.pour(to: node2) => bucket
+        
+        node.subscribe(to: node2) => bucket
+        node.pour(to: node2) => bucket
         
         let nodeReactOff = node.react { s in
-            print("from node", s)
+            print("from node:", s)
         }
+        
+        nodeSource <= "external signal"
         
         let ec = ExecutionContext(kind: .parallel)
         
