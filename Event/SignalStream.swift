@@ -18,6 +18,12 @@ import Foundation
 
 import ExecutionContext
 
+public typealias Signal<T> = (Set<Int>, T)
+
+fileprivate func signature<T: AnyObject>(_ o: T) -> Int {
+    return unsafeBitCast(o, to: Int.self)
+}
+
 internal struct UniqueContainer<T> {
     internal let _id:NSUUID
     
@@ -41,24 +47,35 @@ internal func ==<T>(lhs:UniqueContainer<T>, rhs:UniqueContainer<T>) -> Bool {
     return lhs._id == rhs._id
 }
 
-public protocol SignalStreamProtocol : ExecutionContextTenantProtocol {
+public protocol SignalStreamProtocol : ExecutionContextTenantProtocol, AnyObject {
     associatedtype Payload
     typealias Handler = (Payload)->Void
+    typealias Chainer = (Signal<Payload>)->Void
     
+    func chain(_ f:@escaping Chainer) -> Off
     func react(_ f:@escaping Handler) -> Off
+}
+
+public extension SignalStreamProtocol {
+    public func react(_ f:@escaping Handler) -> Off {
+        return chain { _, payload in
+            f(payload)
+        }
+    }
 }
 
 open class SignalStream<T> : SignalStreamProtocol, MovableExecutionContextTenantProtocol {
     public typealias Payload = T
-    public typealias Handler = (Payload)->Void
+    public typealias Handler = (Signal<Payload>)->Void
     public typealias SettledTenant = SignalStream<T>
     
     public let context: ExecutionContextProtocol
+    private var _signature:Int
     
     public func settle(in context: ExecutionContextProtocol) -> SignalStream<T> {
         return SignalStream<Payload>(context: context) { fun in
-            self.react { payload in
-                fun(payload)
+            self.chain { signal in
+                fun(signal)
             }
         }
     }
@@ -70,18 +87,20 @@ open class SignalStream<T> : SignalStreamProtocol, MovableExecutionContextTenant
         self._recycle = recycle
         self._handlers = []
         self.context = context
+        self._signature = 0
+        self._signature = signature(self)
     }
     
-    internal convenience init(context:ExecutionContextProtocol, advise:(@escaping (Payload)->Void)->Off) {
-        var emit:(Payload)->Void = {_ in}
+    internal convenience init(context:ExecutionContextProtocol, advise:(@escaping Handler)->Off) {
+        var emit:(Signal<Payload>)->Void = {_ in}
         
-        let off = advise { payload in
-            emit(payload)
+        let off = advise { signal in
+            emit(signal)
         }
         self.init(context:context, recycle:off)
         
-        emit = { [unowned self](payload) in
-            self.emit(payload: payload)
+        emit = { [unowned self](signal) in
+            self.emit(signal: signal)
         }
     }
     
@@ -89,15 +108,32 @@ open class SignalStream<T> : SignalStreamProtocol, MovableExecutionContextTenant
         _recycle()
     }
     
-    internal func emit(payload:Payload) {
+    //returns nil if current ID is already there. Otherwise signs the signal
+    private func sign(signal:Signal<Payload>) -> Signal<Payload>? {
+        var sig = signal.0
+        
+        if sig.contains(_signature) {
+            return nil
+        }
+        
+        sig.insert(_signature)
+        
+        return (sig, signal.1)
+    }
+    
+    internal func emit(signal:Signal<Payload>) {
+        guard let signal = sign(signal: signal) else {
+            return
+        }
+
         context.immediateIfCurrent {
             for handler in self._handlers {
-                handler.content.0(payload)
+                handler.content.0(signal)
             }
         }
     }
     
-    public func react(_ f:@escaping Handler) -> Off {
+    public func chain(_ f:@escaping Handler) -> Off {
         return context.sync {
             let container = UniqueContainer(content: (f, self))
             
@@ -113,17 +149,17 @@ open class SignalStream<T> : SignalStreamProtocol, MovableExecutionContextTenant
 public extension SignalStreamProtocol {
     public func map<A>(_ f:@escaping (Payload)->A) -> SignalStream<A> {
         return SignalStream<A>(context: self.context) { fun in
-            self.react { payload in
-                fun(f(payload))
+            self.chain { sig, payload in
+                fun((sig, f(payload)))
             }
         }
     }
     
     public func filter(_ f:@escaping (Payload)->Bool) -> SignalStream<Payload> {
         return SignalStream<Payload>(context: self.context, advise: { fun in
-            self.react { payload in
+            self.chain { sig, payload in
                 if f(payload) {
-                    fun(payload)
+                    fun((sig, payload))
                 }
             }
         })
@@ -132,8 +168,12 @@ public extension SignalStreamProtocol {
 
 public extension EventEmitter {
     public func on<E : Event>(_ event: E) -> SignalStream<E.Payload> {
-        return SignalStream<E.Payload>(context: self.context) { fun in
-            self.on(event, handler: fun)
-        }
+        let sig:Set<Int> = [signature(self)]
+        
+        return SignalStream<E.Payload>(context: self.context, advise: { fun in
+            self.on(event) { payload in
+                fun((sig, payload))
+            }
+        })
     }
 }

@@ -26,7 +26,25 @@ open class SignalNode<T> : SignalStream<T>, SignalNodeProtocol {
         super.init(context: context, recycle: {})
     }
     
-    public func consume(payload:Payload) {
-        self.emit(payload: payload)
+    public func signal(signature:Set<Int>, payload:Payload) {
+        self.emit(signal: (signature, payload))
+    }
+}
+
+public extension SignalNodeProtocol {
+    public func emit(payload:Payload) {
+        self <= payload
+    }
+}
+
+public extension SignalNodeProtocol {
+    public func bind<SN : SignalNodeProtocol>(to node: SN) -> Off where SN.Payload == Payload {
+        let forth = pour(to: node)
+        let back = subscribe(to: node)
+        
+        return {
+            forth()
+            back()
+        }
     }
 }

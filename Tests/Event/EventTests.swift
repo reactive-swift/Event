@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Event
+import Event
 
 import ExecutionContext
 
@@ -61,12 +61,22 @@ class EventEmitterTest : EventEmitter {
 
 class EventTests: XCTestCase {
     
+    let bucket = DisposalBucket()
+    
     func testExample() {
         let node = SignalNode<String>()
+        let node2 = SignalNode<String>()
+        let nodeSource = SignalNode<String>()
+        
+        nodeSource.pour(to: node2) => bucket
+        
+        node.bind(to: node2) => bucket
         
         let nodeReactOff = node.react { s in
-            print("from node", s)
+            print("from node:", s)
         }
+        
+        nodeSource <= "external signal"
         
         let ec = ExecutionContext(kind: .parallel)
         
@@ -76,21 +86,21 @@ class EventTests: XCTestCase {
             print("string:", s)
         }
         
+        node <= "some"
+        
         let nodeOff = eventEmitter.on(.string).map {s in return s + "wtf"}.pour(to: node)
         
         let _ = eventEmitter.on(.int).settle(in: global).react { i in
             print("int:", i)
         }
         
-        let _ = eventEmitter.on(.complex).settle(in: immediate).react { (s, i) in
+        eventEmitter.on(.complex).settle(in: immediate).react { (s, i) in
             print("complex: string:", s, "int:", i)
-        }
+        } => bucket
         
-        let off = eventEmitter.on(.int).map({$0 * 2}).react { i in
+        bucket <= eventEmitter.on(.int).map({$0 * 2}).react { i in
             
         }
-        
-        off()
         
         let semitter = eventEmitter.on(.complex).filter { (s, i) in
             i % 2 == 0

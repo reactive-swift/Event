@@ -19,18 +19,18 @@ import Foundation
 public protocol SignalEndpoint {
     associatedtype Payload
     
-    func consume(payload:Payload)
+    func signal(signature:Set<Int>, payload:Payload)
 }
 
 public extension SignalStreamProtocol {
     public func pour<SE : SignalEndpoint>(to endpoint: SE) -> Off where SE.Payload == Payload {
-        return self.react(endpoint.consume)
+        return self.chain(endpoint.signal)
     }
 }
 
 public extension SignalEndpoint {
     public func subscribe<SS : SignalStreamProtocol>(to stream: SS) -> Off where SS.Payload == Payload {
-        return stream.react(self.consume)
+        return stream.chain(self.signal)
     }
 }
 
@@ -43,7 +43,22 @@ public class SignalReactor<T> : SignalEndpoint {
     
     public typealias Payload = T
     
-    public func consume(payload:Payload) {
+    public func signal(signature:Set<Int>, payload:Payload) {
         _f(payload)
+    }
+}
+
+//infix operator <= : ComparisonPrecedence
+infix operator => : ComparisonPrecedence
+
+public extension SignalEndpoint {
+    public static func <=(endpoint:Self, payload:Payload?) {
+        if let payload = payload {
+            endpoint.signal(signature: [], payload: payload)
+        }
+    }
+    
+    public static func =>(payload:Payload?, endpoint:Self) {
+        endpoint <= payload
     }
 }
