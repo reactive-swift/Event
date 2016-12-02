@@ -70,8 +70,7 @@ class EventTests: XCTestCase {
         
         nodeSource.pour(to: node2) => bucket
         
-        node.subscribe(to: node2) => bucket
-        node.pour(to: node2) => bucket
+        node.bind(to: node2) => bucket
         
         let nodeReactOff = node.react { s in
             print("from node:", s)

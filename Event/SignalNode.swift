@@ -36,3 +36,15 @@ public extension SignalNodeProtocol {
         self <= payload
     }
 }
+
+public extension SignalNodeProtocol {
+    public func bind<SN : SignalNodeProtocol>(to node: SN) -> Off where SN.Payload == Payload {
+        let forth = pour(to: node)
+        let back = subscribe(to: node)
+        
+        return {
+            forth()
+            back()
+        }
+    }
+}
