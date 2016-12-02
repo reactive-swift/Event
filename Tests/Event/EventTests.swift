@@ -61,6 +61,8 @@ class EventEmitterTest : EventEmitter {
 
 class EventTests: XCTestCase {
     
+    let bucket = DisposalBucket()
+    
     func testExample() {
         let node = SignalNode<String>()
         
@@ -84,15 +86,13 @@ class EventTests: XCTestCase {
             print("int:", i)
         }
         
-        let _ = eventEmitter.on(.complex).settle(in: immediate).react { (s, i) in
+        eventEmitter.on(.complex).settle(in: immediate).react { (s, i) in
             print("complex: string:", s, "int:", i)
-        }
+        } => bucket
         
-        let off = eventEmitter.on(.int).map({$0 * 2}).react { i in
+        bucket <= eventEmitter.on(.int).map({$0 * 2}).react { i in
             
         }
-        
-        off()
         
         let semitter = eventEmitter.on(.complex).filter { (s, i) in
             i % 2 == 0
