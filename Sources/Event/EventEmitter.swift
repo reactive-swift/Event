@@ -15,6 +15,8 @@
 //===----------------------------------------------------------------------===//
 
 import Foundation
+
+import Boilerplate
 import ExecutionContext
 
 internal struct Listener {
@@ -47,7 +49,7 @@ internal func ==(lhs:Listener, rhs:Listener) -> Bool {
     return lhs._id == rhs._id
 }
 
-public protocol EventEmitter : AnyObject, ExecutionContextTenantProtocol {
+public protocol EventEmitter : AnyObject, ExecutionContextTenantProtocol, SignatureProvider {
     var dispatcher:EventDispatcher {get}
 }
 

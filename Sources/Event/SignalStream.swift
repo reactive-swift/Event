@@ -16,13 +16,10 @@
 
 import Foundation
 
+import Boilerplate
 import ExecutionContext
 
 public typealias Signal<T> = (Set<Int>, T)
-
-fileprivate func signature<T: AnyObject>(_ o: T) -> Int {
-    return unsafeBitCast(o, to: Int.self)
-}
 
 internal struct UniqueContainer<T> {
     internal let _id:NSUUID
@@ -47,7 +44,7 @@ internal func ==<T>(lhs:UniqueContainer<T>, rhs:UniqueContainer<T>) -> Bool {
     return lhs._id == rhs._id
 }
 
-public protocol SignalStreamProtocol : ExecutionContextTenantProtocol, AnyObject {
+public protocol SignalStreamProtocol : ExecutionContextTenantProtocol, AnyObject, SignatureProvider {
     associatedtype Payload
     typealias Handler = (Payload)->Void
     typealias Chainer = (Signal<Payload>)->Void
@@ -88,7 +85,7 @@ open class SignalStream<T> : SignalStreamProtocol, MovableExecutionContextTenant
         self._handlers = []
         self.context = context
         self._signature = 0
-        self._signature = signature(self)
+        self._signature = signature
     }
     
     internal convenience init(context:ExecutionContextProtocol, advise:(@escaping Handler)->Off) {
@@ -168,7 +165,7 @@ public extension SignalStreamProtocol {
 
 public extension EventEmitter {
     public func on<E : Event>(_ event: E) -> SignalStream<E.Payload> {
-        let sig:Set<Int> = [signature(self)]
+        let sig:Set<Int> = [signature]
         
         return SignalStream<E.Payload>(context: self.context, advise: { fun in
             self.on(event) { payload in
