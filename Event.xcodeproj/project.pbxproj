@@ -277,8 +277,8 @@
 		65CBF47C1CCA1B40004C27B4 = {
 			isa = PBXGroup;
 			children = (
-				65CBF4881CCA1B40004C27B4 /* Event */,
-				65CBF4941CCA1B40004C27B4 /* EventTests */,
+				9203548B1DF2168E00A16573 /* Sources */,
+				9203548C1DF216AD00A16573 /* Tests */,
 				65FD8EC41CDA2B080046D5D6 /* Frameworks */,
 				65CBF4871CCA1B40004C27B4 /* Products */,
 			);
@@ -318,8 +318,7 @@
 				65CBF4951CCA1B40004C27B4 /* EventTests.swift */,
 				65CBF4971CCA1B40004C27B4 /* Info.plist */,
 			);
-			name = EventTests;
-			path = Tests/Event;
+			path = EventTests;
 			sourceTree = "<group>";
 		};
 		65FD8EC41CDA2B080046D5D6 /* Frameworks */ = {
@@ -383,6 +382,22 @@
 				65FD8F051CDA2B080046D5D6 /* RunLoop.framework */,
 			);
 			path = watchOS;
+			sourceTree = "<group>";
+		};
+		9203548B1DF2168E00A16573 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				65CBF4881CCA1B40004C27B4 /* Event */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9203548C1DF216AD00A16573 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				65CBF4941CCA1B40004C27B4 /* EventTests */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -868,7 +883,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Event/Info.plist;
+				INFOPLIST_FILE = Sources/Event/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
@@ -893,7 +908,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Event/Info.plist;
+				INFOPLIST_FILE = Sources/Event/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
@@ -910,7 +925,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = Tests/Event/Info.plist;
+				INFOPLIST_FILE = Tests/EventTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -925,7 +940,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = Tests/Event/Info.plist;
+				INFOPLIST_FILE = Tests/EventTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -944,7 +959,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Event/Info.plist;
+				INFOPLIST_FILE = Sources/Event/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -968,7 +983,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = Event/Info.plist;
+				INFOPLIST_FILE = Sources/Event/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -989,7 +1004,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = EventTests/Info.plist;
+				INFOPLIST_FILE = Tests/EventTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-iOS";
@@ -1006,7 +1021,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = EventTests/Info.plist;
+				INFOPLIST_FILE = Tests/EventTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-iOS";
@@ -1028,7 +1043,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = Event/Info.plist;
+				INFOPLIST_FILE = Sources/Event/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
@@ -1052,7 +1067,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = Event/Info.plist;
+				INFOPLIST_FILE = Sources/Event/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
@@ -1072,7 +1087,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = EventTests/Info.plist;
+				INFOPLIST_FILE = Tests/EventTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1088,7 +1103,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = EventTests/Info.plist;
+				INFOPLIST_FILE = Tests/EventTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.crossroadlabs.EventTests-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1111,7 +1126,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
-				INFOPLIST_FILE = Event/Info.plist;
+				INFOPLIST_FILE = Sources/Event/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
@@ -1136,7 +1151,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
-				INFOPLIST_FILE = Event/Info.plist;
+				INFOPLIST_FILE = Sources/Event/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.crossroadlabs.Event;
