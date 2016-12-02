@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Event
+import Event
 
 import ExecutionContext
 

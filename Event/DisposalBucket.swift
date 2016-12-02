@@ -29,6 +29,9 @@ public class DisposalBucket {
         }
     }
     
+    public init() {
+    }
+    
     deinit {
         off()
     }
