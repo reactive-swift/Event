@@ -144,6 +144,16 @@ open class SignalStream<T> : SignalStreamProtocol, MovableExecutionContextTenant
 }
 
 public extension SignalStreamProtocol {
+    public func flatMap<A>(_ f:@escaping (Payload)->A?) -> SignalStream<A> {
+        return SignalStream<A>(context: self.context, advise: { fun in
+            self.chain { sig, payload in
+                if let payload = f(payload) {
+                    fun((sig, payload))
+                }
+            }
+        })
+    }
+    
     public func map<A>(_ f:@escaping (Payload)->A) -> SignalStream<A> {
         return SignalStream<A>(context: self.context) { fun in
             self.chain { sig, payload in

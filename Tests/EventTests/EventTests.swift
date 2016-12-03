@@ -117,8 +117,13 @@ class EventTests: XCTestCase {
             print(string)
         }
         
+        eventEmitter.on(.string).flatMap {Int($0)}.react { i in
+            print("!@#$%$#@#$%MyINT:", i)
+        } => bucket
+        
         eventEmitter.emit(.int, payload: 7)
         eventEmitter.emit(.string, payload: "something here")
+        eventEmitter.emit(.string, payload: "19")
         eventEmitter.emit(.complex, payload: ("whoo hoo", 7))
         eventEmitter.emit(.complex, payload: ("hey", 8))
         
