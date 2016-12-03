@@ -165,11 +165,9 @@ public extension SignalStreamProtocol {
 
 public extension EventEmitter {
     public func on<E : Event>(_ event: E) -> SignalStream<E.Payload> {
-        let sig:Set<Int> = [signature]
-        
         return SignalStream<E.Payload>(context: self.context, advise: { fun in
-            self.on(event) { payload in
-                fun((sig, payload))
+            self.on(event) { signal in
+                fun(signal)
             }
         })
     }

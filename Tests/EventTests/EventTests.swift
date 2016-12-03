@@ -82,6 +82,11 @@ class EventTests: XCTestCase {
         
         let eventEmitter = EventEmitterTest()
         
+        let emitterSignature = eventEmitter.signature
+        let dispatcherSignature = eventEmitter.dispatcher.signature
+        
+        XCTAssertEqual(emitterSignature, dispatcherSignature)
+        
         let _ = eventEmitter.on(.string).settle(in: ec).react { s in
             print("string:", s)
         }

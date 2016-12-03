@@ -21,18 +21,18 @@ import ExecutionContext
 
 internal struct Listener {
     internal let _id:NSUUID
-    internal let listener:(Any)->Void
+    internal let listener:(Signal<Any>)->Void
     internal let event:HashableContainer
     
-    internal init<Payload>(event:HashableContainer, listener:@escaping (Payload)->Void) {
+    internal init<Payload>(event:HashableContainer, listener:@escaping (Signal<Payload>)->Void) {
         self._id = NSUUID()
         self.event = event
-        self.listener = { payload in
+        self.listener = { signature, payload in
             guard let payload = payload as? Payload else {
                 return
             }
             
-            listener(payload)
+            listener((signature, payload))
         }
     }
 }
@@ -53,18 +53,26 @@ public protocol EventEmitter : AnyObject, ExecutionContextTenantProtocol, Signat
     var dispatcher:EventDispatcher {get}
 }
 
+public extension EventEmitter {
+    public var signature: Int {
+        get {
+            return dispatcher.signature
+        }
+    }
+}
+
 public typealias Off = ()->Void
 
 public extension EventEmitter {
-    internal func on<E : Event>(_ event: E, handler:@escaping (E.Payload)->Void) -> Off {
+    internal func on<E : Event>(_ event: E, handler:@escaping (Signal<E.Payload>)->Void) -> Off {
         let listener = dispatcher.addListener(event: event, context: context, handler: handler)
         return { [weak self]()->Void in
             self?.dispatcher.removeListener(listener: listener, context: self!.context)
         }
     }
     
-    public func emit<E : Event>(_ event: E, payload:E.Payload) {
-        dispatcher.dispatch(event, context: context, payload: payload)
+    public func emit<E : Event>(_ event: E, payload:E.Payload, signature:Set<Int> = []) {
+        dispatcher.dispatch(event, context: context, payload: payload, signature: signature)
     }
 }
 
@@ -95,13 +103,13 @@ public func ==(lhs:HashableContainer, rhs:HashableContainer) -> Bool {
     return lhs._equator(rhs.value)
 }
 
-public class EventDispatcher {
+public class EventDispatcher : SignatureProvider {
     private var registry:Dictionary<HashableContainer,Set<Listener>> = [:]
     
     public init() {
     }
     
-    internal func addListener<E : Event>(event: E, context:ExecutionContextProtocol, handler:@escaping (E.Payload)->Void) -> Listener {
+    internal func addListener<E : Event>(event: E, context:ExecutionContextProtocol, handler:@escaping (Signal<E.Payload>)->Void) -> Listener {
         return context.sync {
             let container = HashableContainer(hashable: event)
             let listener = Listener(event: container, listener: handler)
@@ -122,13 +130,22 @@ public class EventDispatcher {
         }
     }
     
-    internal func dispatch<E : Event>(_ event:E, context:ExecutionContextProtocol, payload:E.Payload) {
+    internal func dispatch<E : Event>(_ event:E, context:ExecutionContextProtocol, payload:E.Payload, signature:Set<Int>) {
+        let sig = self.signature
+        
+        if signature.contains(sig) {
+            return
+        }
+        
+        var sigset = signature
+        sigset.insert(sig)
+        
         context.immediateIfCurrent {
             let container = HashableContainer(hashable: event)
             
             if let listeners = self.registry[container] {
                 for listener in listeners {
-                    listener.listener(payload)
+                    listener.listener((sigset, payload))
                 }
             }
         }
