@@ -128,3 +128,13 @@ class EventTests: XCTestCase {
     }
     
 }
+
+#if os(Linux)
+extension EventTests {
+	static var allTests : [(String, (EventTests) -> () throws -> Void)] {
+		return [
+			("testExample", testExample),
+		]
+	}
+}
+#endif
