@@ -171,6 +171,35 @@ public extension SignalStreamProtocol {
             }
         })
     }
+    
+    public func debounce(timeout:Timeout, leading:Bool = false) -> SignalStream<Payload> {
+        var firstFired = false
+        let context = self.context
+        var stored:Signal<Payload>? = nil
+        var lastFinish = Date()
+        
+        return SignalStream<Payload>(context: self.context, advise: { fun in
+            self.chain { signal in
+                if !firstFired && leading {
+                    firstFired = true
+                    fun(signal)
+                    lastFinish = Date()
+                    return
+                }
+                
+                if nil == stored {
+                    let tm = Timeout(timeout: timeout.timeInterval - Date().timeIntervalSince(lastFinish))
+                    context.async(after: tm) {
+                        fun(stored!)
+                        stored = nil
+                        lastFinish = Date()
+                    }
+                }
+                
+                stored = signal
+            }
+        })
+    }
 }
 
 public extension EventEmitter {

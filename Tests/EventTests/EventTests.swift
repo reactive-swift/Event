@@ -121,6 +121,21 @@ class EventTests: XCTestCase {
             print("!@#$%$#@#$%MyINT:", i)
         } => bucket
         
+        let expectation = self.expectation(description: "OK")
+        let expectation2 = self.expectation(description: "OK")
+        
+        var one = true
+        
+        eventEmitter.on(.string).debounce(timeout: 3, leading: true).react { s in
+            print("@@@@@@@@@@@@@@@@:", s)
+            if one {
+                expectation.fulfill()
+                one = false
+            } else {
+                expectation2.fulfill()
+            }
+        } => bucket
+        
         eventEmitter.emit(.int, payload: 7)
         eventEmitter.emit(.string, payload: "something here")
         eventEmitter.emit(.string, payload: "19")
@@ -132,7 +147,7 @@ class EventTests: XCTestCase {
         nodeReactOff()
         nodeOff()
         
-        
+        self.waitForExpectations(timeout: 4, handler: nil)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
