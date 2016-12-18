@@ -200,6 +200,128 @@ public extension SignalStreamProtocol {
             }
         })
     }
+    
+    //all values will go in pairs. Non-paired values are buffered until paired
+    public func zip<SS : SignalStreamProtocol>(_ ss:SS) -> SignalStream<(Payload, SS.Payload)> where SS :MovableExecutionContextTenantProtocol, SS.SettledTenant == SS {
+        let zipped = ss.settle(in: self.context)
+        
+        var own = Array<(Set<Int>, Payload)>()
+        var zip = Array<(Set<Int>, SS.Payload)>()
+        
+        typealias Fun = (Set<Int>, (Payload, SS.Payload)) -> Void
+        
+        let handle = { (fun:Fun) -> Void in
+            guard let ownSignal = own.first else {
+                return
+            }
+            
+            guard let zipSignal = zip.first else {
+                return
+            }
+            
+            fun(ownSignal.0.union(zipSignal.0), (ownSignal.1, zipSignal.1))
+            
+            own.removeFirst()
+            zip.removeFirst()
+        }
+        
+        return SignalStream<(Payload, SS.Payload)>(context: self.context, advise: { fun in
+            let soff = self.chain { signal in
+                own.append(signal)
+                handle(fun)
+            }
+            
+            let zoff = zipped.chain { signal in
+                zip.append(signal)
+                handle(fun)
+            }
+            
+            return {
+                soff()
+                zoff()
+            }
+        })
+    }
+    
+    //Zipped values are emmitted every time either stream signals. No signals are emitted until both signaled at least ones. If you need to have signals emitted from the very first occurance (not both) see zipLatest0
+    public func zipLatest<SS : SignalStreamProtocol>(_ ss:SS) -> SignalStream<(Payload, SS.Payload)> where SS :MovableExecutionContextTenantProtocol, SS.SettledTenant == SS {
+        let zipped = ss.settle(in: self.context)
+        
+        var own:(Set<Int>, Payload)? = nil
+        var zip:(Set<Int>, SS.Payload)? = nil
+        
+        typealias Fun = (Set<Int>, (Payload, SS.Payload)) -> Void
+        
+        let handle = { (fun:Fun) -> Void in
+            guard let own = own else {
+                return
+            }
+            
+            guard let zip = zip else {
+                return
+            }
+            
+            fun(own.0.union(zip.0), (own.1, zip.1))
+        }
+        
+        return SignalStream<(Payload, SS.Payload)>(context: self.context, advise: { fun in
+            let soff = self.chain { signal in
+                own = signal
+                handle(fun)
+            }
+            
+            let zoff = zipped.chain { signal in
+                zip = signal
+                handle(fun)
+            }
+            
+            return {
+                soff()
+                zoff()
+            }
+        })
+    }
+    
+    //Zipped values are emmitted every time either stream signals. Signals are emitted since first stream has signaled at least ones
+    public func zipLatest0<SS : SignalStreamProtocol>(_ ss:SS) -> SignalStream<(Payload?, SS.Payload?)> where SS :MovableExecutionContextTenantProtocol, SS.SettledTenant == SS {
+        let zipped = ss.settle(in: self.context)
+        
+        var own:(Set<Int>, Payload)? = nil
+        var zip:(Set<Int>, SS.Payload)? = nil
+        
+        typealias Fun = (Set<Int>, (Payload?, SS.Payload?)) -> Void
+        
+        let handle = { (fun:Fun) -> Void in
+            let sigOpt = own.flatMap { own in
+                zip.map { zip in
+                    zip.0.union(own.0)
+                }.or(else: own.0)
+            }.or { zip?.0 }
+            
+            guard let sig = sigOpt else {
+                fatalError("How can it fire if neither isn't nil?")
+            }
+            
+            fun(sig, (own?.1, zip?.1))
+        }
+        
+        return SignalStream<(Payload?, SS.Payload?)>(context: self.context, advise: { fun in
+            let soff = self.chain { signal in
+                own = signal
+                handle(fun)
+            }
+            
+            let zoff = zipped.chain { signal in
+                zip = signal
+                handle(fun)
+            }
+            
+            return {
+                soff()
+                zoff()
+            }
+        })
+    }
 }
 
 public extension EventEmitter {
