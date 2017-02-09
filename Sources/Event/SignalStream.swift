@@ -80,7 +80,7 @@ open class SignalStream<T> : SignalStreamProtocol, MovableExecutionContextTenant
     private let _recycle:Off
     private var _handlers:Set<UniqueContainer<(Handler, SignalStream)>>
     
-    internal init(context:ExecutionContextProtocol, recycle:@escaping Off) {
+    public init(context:ExecutionContextProtocol, recycle:@escaping Off) {
         self._recycle = recycle
         self._handlers = []
         self.context = context
@@ -88,7 +88,7 @@ open class SignalStream<T> : SignalStreamProtocol, MovableExecutionContextTenant
         self._signature = signature
     }
     
-    internal convenience init(context:ExecutionContextProtocol, advise:(@escaping Handler)->Off) {
+    public convenience init(context:ExecutionContextProtocol, advise:(@escaping Handler)->Off) {
         var emit:(Signal<Payload>)->Void = {_ in}
         
         let off = advise { signal in
