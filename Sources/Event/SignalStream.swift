@@ -322,6 +322,11 @@ public extension SignalStreamProtocol {
             }
         })
     }
+    
+    public func fork<SE : SignalEndpoint>(to endpoint: SE, _ f:(@escaping Off)->Void) -> Self where SE.Payload == Payload {
+        f(pour(to: endpoint))
+        return self
+    }
 }
 
 public extension EventEmitter {

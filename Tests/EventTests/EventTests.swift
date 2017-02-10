@@ -67,14 +67,19 @@ class EventTests: XCTestCase {
         let node = SignalNode<String>()
         let node2 = SignalNode<String>()
         let nodeSource = SignalNode<String>()
+        let nodeFork = SignalNode<String>()
         
-        nodeSource.pour(to: node2) => bucket
+        nodeSource.fork(to: nodeFork, bucket.put).pour(to: node2) => bucket
         
         node.bind(to: node2) => bucket
         
         let nodeReactOff = node.react { s in
             print("from node:", s)
         }
+        
+        nodeFork.react { string in
+            print("~!!!I WAS FORKED!!!~", string)
+        } => bucket
         
         nodeSource <= "external signal"
         

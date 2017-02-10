@@ -40,10 +40,8 @@ public class DisposalBucket {
         off()
     }
     
-    public func put(off:Off?) {
-        if let off = off {
-            self.offs.append(off)
-        }
+    public func put(off:@escaping Off) {
+        self.offs.append(off)
     }
 }
 
@@ -72,11 +70,13 @@ public extension DisposalBucket {
 //Operators
 public extension DisposalBucket {
     public static func <=(bucket:DisposalBucket, off:Off?) {
-        bucket.put(off: off)
+        if let off = off {
+            bucket.put(off: off)
+        }
     }
     
     public static func =>(off:Off?, bucket:DisposalBucket) {
-        bucket.put(off: off)
+        bucket <= off
     }
 }
 
