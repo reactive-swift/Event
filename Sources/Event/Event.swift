@@ -43,7 +43,7 @@ public extension EventEmitter {
         return self.on(groupedEvent.event)
     }
     
-    public func emit<E : Event>(_ groupedEvent: CommonEventGroup<E>, payload:E.Payload) {
-        dispatcher.dispatch(groupedEvent.event, context: context, payload: payload)
+    public func emit<E : Event>(_ groupedEvent: CommonEventGroup<E>, payload:E.Payload, signature:Set<Int> = []) {
+        dispatcher.dispatch(groupedEvent.event, context: context, payload: payload, signature: signature)
     }
 }

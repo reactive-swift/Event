@@ -52,13 +52,11 @@ public class SignalReactor<T> : SignalEndpoint {
 infix operator => : ComparisonPrecedence
 
 public extension SignalEndpoint {
-    public static func <=(endpoint:Self, payload:Payload?) {
-        if let payload = payload {
-            endpoint.signal(signature: [], payload: payload)
-        }
+    public static func <=(endpoint:Self, payload:Payload) {
+        endpoint.signal(signature: [], payload: payload)
     }
     
-    public static func =>(payload:Payload?, endpoint:Self) {
+    public static func =>(payload:Payload, endpoint:Self) {
         endpoint <= payload
     }
 }

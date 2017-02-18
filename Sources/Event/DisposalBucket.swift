@@ -15,6 +15,10 @@
 //===----------------------------------------------------------------------===//
 import Foundation
 
+import Boilerplate
+
+//private let _current = try! ThreadLocal<DisposalBucket>()
+
 //TODO: move to Boilerplate???
 public class DisposalBucket {
     private var offs = [Off]()
@@ -36,9 +40,38 @@ public class DisposalBucket {
         off()
     }
     
+    public func put(off:@escaping Off) {
+        self.offs.append(off)
+    }
+}
+
+/* for the better times
+//Current bucket
+public extension DisposalBucket {
+    public static var current:DisposalBucket? {
+        get {
+            return _current.value
+        }
+    }
+    
+    public func use(in f: (DisposalBucket)->Void) {
+        _current.value = self
+        
+        f(self)
+    }
+    
+    public func use(in f: ()->Void) {
+        use { (_:DisposalBucket) in
+            f()
+        }
+    }
+}*/
+
+//Operators
+public extension DisposalBucket {
     public static func <=(bucket:DisposalBucket, off:Off?) {
         if let off = off {
-            bucket.offs.append(off)
+            bucket.put(off: off)
         }
     }
     
@@ -46,3 +79,5 @@ public class DisposalBucket {
         bucket <= off
     }
 }
+
+
