@@ -89,15 +89,25 @@ open class SignalStream<T> : SignalStreamProtocol, MovableExecutionContextTenant
     }
     
     public convenience init(context:ExecutionContextProtocol, advise:(@escaping Handler)->Off) {
-        var emit:(Signal<Payload>)->Void = {_ in}
+        var buffer = [Signal<T>]()
+        var emit:(Signal<Payload>)->Void = { payload in
+            buffer.append(payload)
+        }
         
         let off = advise { signal in
             emit(signal)
         }
+        
         self.init(context:context, recycle:off)
         
         emit = { [unowned self](signal) in
             self.emit(signal: signal)
+        }
+        
+        for signal in buffer {
+            self.context.async {
+                emit(signal)
+            }
         }
     }
     
