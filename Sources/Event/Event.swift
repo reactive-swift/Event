@@ -27,7 +27,7 @@ public enum ErrorEvent : Event {
 }
 
 public struct CommonEventGroup<E : Event> {
-    internal let event:E
+    public let event:E
     
     private init(_ event:E) {
         self.event = event
