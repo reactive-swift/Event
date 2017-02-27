@@ -1,1 +1,1 @@
-github "reactive-swift/ExecutionContext" "master"
+github "reactive-swift/ExecutionContext" ~> 0.5
