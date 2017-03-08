@@ -19,6 +19,6 @@ import PackageDescription
 let package = Package(
     name: "Event",
     dependencies: [
-        .Package(url: "https://github.com/reactive-swift/ExecutionContext.git", majorVersion: 0, minor: 5)
+        .Package(url: "https://github.com/reactive-swift/ExecutionContext.git", "0.6.0-alpha.1")
     ]
 )
